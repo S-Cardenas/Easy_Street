@@ -61,7 +61,10 @@ img {
 }
 
 .header-nav {
-  width: 500px;
+  margin: 0 auto;
+  width: 900px;
+  padding: 10px 0;
+
 }
 
 /*.header a{
