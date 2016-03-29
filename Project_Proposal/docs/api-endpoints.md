@@ -41,3 +41,7 @@
 - `GET /api/bookmarks/:id/properties`
   - index of all properties for a bookmarks
   - accepts pagination params (if I get there)
+
+
+
+properties/search

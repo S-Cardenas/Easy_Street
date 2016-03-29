@@ -6,8 +6,7 @@
 
 ## Minimum Viable Product
 
-EasyStreet is a web application inspired by StreetEasy built using Ruby on Rails
-and React.js. EasyStreet allows users to:
+EasyStreet is a web application inspired by StreetEasy built using Ruby on Rails and React.js. EasyStreet allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
