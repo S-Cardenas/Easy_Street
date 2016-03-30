@@ -63,10 +63,48 @@ img {
 .header-nav {
   margin: 0 auto;
   width: 900px;
+  /*height: 200px;*/
   padding: 10px 0;
-
+  position: relative;
 }
 
-/*.header a{
-  width: 500px;
-}*/
+.header-img {
+  height: 60px;
+  /*display: block;*/
+}
+
+.header-icon {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  bottom: 8px;
+  right: 245px;
+}
+
+.header-logo {
+  color: #fff;
+  font-size: 30px;
+  display: block;
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.property-index {
+  width: 900px;
+  /*border: 1px dashed blue;*/
+  margin: auto;
+}
+
+.property-listing {
+  border-top: 1px solid #000;
+  padding-top: 16px;
+  margin-top: 15px;
+}
+
+.property-listing:last-child {
+  border-bottom: 1px solid #000;
+  padding-bottom: 16px;
+}
