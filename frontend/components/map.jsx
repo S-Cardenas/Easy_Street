@@ -2,8 +2,6 @@ var React = require('react');
 var PropertyStore = require('../stores/property.js');
 var ApiUtil = require('../util/api_util.js');
 
-
-
 var MyMap = React.createClass({
 
   _markers: [],

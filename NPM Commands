@@ -1,0 +1,32 @@
+### NPM ###
+
+npm install --save react react-dom flux
+
+npm install --save webpack
+
+npm install --save babel-core
+npm install --save babel-loader
+npm install --save babel-preset-react
+
+devtool: 'source-map'?
+
+Webpack --w
+
+
+COMMANDS:
+
+1. npm init --yes
+2. decide/add dependencies to pacakge.json
+3. npm install   ==> creates node_modules folder from dependencies
+4. Set up config for webpack.config.js
+5. Create the frontend folder
+6. webpack --w
+7. Place bundle.js and node_modules in .gitignore
+
+
+
+
+### Git Hub ###
+Clone repository:
+1. Copy HTTPS from github site
+2. On terminal: git clone url
