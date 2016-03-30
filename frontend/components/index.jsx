@@ -1,6 +1,7 @@
 var React = require('react');
 var PropertyStore = require('../stores/property.js');
 var ApiUtil = require('../util/api_util.js');
+var ApiActions = require('../actions/api_actions.js');
 
 var PropertyIndex = React.createClass({
   getInitialState: function() {
@@ -16,14 +17,18 @@ var PropertyIndex = React.createClass({
     this.setState({ properties: PropertyStore.all() });
   },
 
+  _focusProperty: function(property) {
+    ApiActions.focusedProperty(property);
+  },
+
   render: function() {
     var myProperties = this.state.properties.map(function(property, i) {
       return (
-          <ul className="property-listing" key={i}>
+          <ul className="property-listing" key={i} onMouseEnter={this._focusProperty.bind(null, property)}>
             <li className="property-address">
               {property.address}
             </li>
-            <li>
+            <li className="property-price">
               {property.price} For Rent
             </li>
             <li>

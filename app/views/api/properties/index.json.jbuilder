@@ -7,4 +7,6 @@ json.array! @properties do |property|
   json.num_rooms property.num_rooms
   json.num_bathroom property.num_bathroom
   json.borough_id property.borough_id
+  json.lat property.lat
+  json.lng property.lng
 end

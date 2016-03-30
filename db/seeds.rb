@@ -51,9 +51,9 @@ end
 
 
 Property.destroy_all
-p1 = Property.create!(address:"310 West 18th Street #3A", author_id: 1, description: d1, area: 1200, price: 3000, num_rooms: 2.5, num_bathroom: 1, borough_id: b1.id, availability: true)
-p2 = Property.create!(address:"444 West 19th Street #202", author_id: 1, description: d2, area: 850, price: 6500, num_rooms: 4, num_bathroom: 1, borough_id: b1.id, availability: true)
-p3 = Property.create!(address:"318 Grand Street #2J", author_id: 2, description: d3, area: 1600, price: 4500, num_rooms: 2, num_bathroom: 2, borough_id: b2.id, availability: true)
+p1 = Property.create!(address:"310 West 18th Street #3A", author_id: 1, description: d1, area: 1200, price: 3000, num_rooms: 2.5, num_bathroom: 1, borough_id: b1.id, availability: true, lat: 40.739013, lng: -73.991950)
+p2 = Property.create!(address:"444 West 19th Street #202", author_id: 1, description: d2, area: 850, price: 6500, num_rooms: 4, num_bathroom: 1, borough_id: b1.id, availability: true, lat: 40.744973, lng: -74.005030)
+p3 = Property.create!(address:"318 Grand Street #2J", author_id: 2, description: d3, area: 1600, price: 4500, num_rooms: 2, num_bathroom: 2, borough_id: b2.id, availability: true, lat: 40.712705, lng: -73.956608)
 # p4 = Property.create!(address:, author_id:, description:, area:, price:, num_rooms:, num_bathroom:, borough_id: , availability: true)
 # p5 = Property.create!(address:, author_id:, description:, area:, price:, num_rooms:, num_bathroom:, borough_id: , availability: true)
 # p6 = Property.create!(address:, author_id:, description:, area:, price:, num_rooms:, num_bathroom:, borough_id: , availability: true)

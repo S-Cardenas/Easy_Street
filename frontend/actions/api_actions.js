@@ -8,6 +8,13 @@ var ApiActions = {
       actionType: PropertyConstants.PROPERTIES_RECEIVED,
       properties: properties
     });
+  },
+
+  focusedProperty: function(property) {
+    ApiDispatcher.dispatch({
+      actionType: PropertyConstants.FOCUSED_PROPERTY,
+      property: property 
+    });
   }
 };
 
