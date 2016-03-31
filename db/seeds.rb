@@ -63,3 +63,44 @@ p3 = Property.create!(address:"318 Grand Street #2J", author_id: 2, description:
 #
 #
 # Property.create!(address:, author_id:, description:, area:, price:, num_rooms:, num_bathroom: borough_id:, availability:)
+
+
+Picture.destroy_all
+pic1 = Picture.create!(title: "310 W 18th pic 1", imageable_id: p1.id, imageable_type: "Property")
+pic1.image = File.open('app/assets/images/310w/310w1.jpg')
+pic1.save!
+pic2 = Picture.create!(title: "310 W 18th pic ", imageable_id: p1.id, imageable_type: "Property")
+pic2.image = File.open('app/assets/images/310w/310w2.jpg')
+pic2.save!
+pic3 = Picture.create!(title: "310 W 18th pic ", imageable_id: p1.id, imageable_type: "Property")
+pic3.image = File.open('app/assets/images/310w/310w3.jpg')
+pic3.save!
+pic4 = Picture.create!(title: "310 W 18th pic ", imageable_id: p1.id, imageable_type: "Property")
+pic4.image = File.open('app/assets/images/310w/310w4.jpg')
+pic4.save!
+
+pic5 = Picture.create!(title: "", imageable_id: p3.id, imageable_type: "Property")
+pic5.image = File.open('app/assets/images/318g/318g1.jpg')
+pic5.save!
+pic6 = Picture.create!(title: "", imageable_id: p3.id, imageable_type: "Property")
+pic6.image = File.open('app/assets/images/318g/318g2.jpg')
+pic6.save!
+pic7 = Picture.create!(title: "", imageable_id: p3.id, imageable_type: "Property")
+pic7.image = File.open('app/assets/images/318g/318g3.jpg')
+pic7.save!
+pic8 = Picture.create!(title: "", imageable_id: p3.id, imageable_type: "Property")
+pic8.image = File.open('app/assets/images/318g/318g4.jpg')
+pic8.save!
+
+pic9 = Picture.create!(title: "", imageable_id: p2.id, imageable_type: "Property")
+pic9.image = File.open('app/assets/images/444w/444w1.jpg')
+pic9.save!
+pic10 = Picture.create!(title: "", imageable_id: p2.id, imageable_type: "Property")
+pic10.image = File.open('app/assets/images/444w/444w2.jpg')
+pic10.save!
+pic11 = Picture.create!(title: "", imageable_id: p2.id, imageable_type: "Property")
+pic11.image = File.open('app/assets/images/444w/444w3.jpg')
+pic11.save!
+pic12 = Picture.create!(title: "", imageable_id: p2.id, imageable_type: "Property")
+pic12.image = File.open('app/assets/images/444w/444w4.jpg')
+pic12.save!
