@@ -13,6 +13,10 @@ var PropertyIndex = React.createClass({
     ApiUtil.fetchProperties();
   },
 
+  componentWillUnmount: function() {
+    this.propertyListener.remove();
+  },
+
   _onChange: function() {
     this.setState({ properties: PropertyStore.all() });
   },

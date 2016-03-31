@@ -7,12 +7,31 @@ var MyMap = React.createClass({
   _markers: [],
 
   componentDidMount: function(){
-    this._initializeMap();
-    this._placeMarker();
+    this._initializeMap(function () {
+      this._placeMarker(this.props);
+    }.bind(this));
+    // this.propertyStorelistener = PropertyStore.addListener(this._onChange);
+
   },
 
-  _placeMarker: function() {
-    if (!this.props.focusedProperty) return;
+  componentWillUnmount: function() {
+    google.maps.event.clearListeners(this.map, 'tiles loaded');
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    this._placeMarker(newProps);
+  },
+
+  _onChange: function() {
+    // debugger
+    // this._placeMarker();
+  },
+
+  _placeMarker: function(props) {
+    // var focusedProperty = PropertyStore.focusedProperty();
+    var focusedProperty = props.focusedProperty;
+    if (!focusedProperty) return;
+
 
     for ( var i = 0; i < this._markers.length; i++ ) {
           this._markers[i].setMap( null );
@@ -21,13 +40,13 @@ var MyMap = React.createClass({
     this._markers = [];
 
     var markerPosition= {
-      lat: this.props.focusedProperty.lat,
-      lng: this.props.focusedProperty.lng
+      lat: focusedProperty.lat,
+      lng: focusedProperty.lng
     };
 
     var marker = new google.maps.Marker({
       position: markerPosition,
-      title: this.props.focusedProperty.address
+      title: focusedProperty.address
     });
 
     marker.setMap(this.map);
@@ -35,17 +54,19 @@ var MyMap = React.createClass({
     this._markers.push(marker);
   },
 
-  _initializeMap: function() {
+  _initializeMap: function(cb) {
     var mapDOMNode = this.refs.map;
     var mapOptions = {
       center: {lat: 40.731600, lng: -73.997022},
       zoom: 13
     };
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
+    google.maps.event.addListener(this.map, "tilesloaded", cb);
   },
 
   render: function() {
-    this._placeMarker();
+    // console.log('easd');
+    // this._placeMarker();
 
     return (
       <div className="map" ref="map">

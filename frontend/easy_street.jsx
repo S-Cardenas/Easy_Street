@@ -6,11 +6,13 @@ var IndexRoute = require('react-router').IndexRoute;
 var hashHistory = require('react-router').hashHistory;
 var App = require('./components/app.jsx');
 var Properties = require('./components/properties.jsx');
+var Property = require('./components/property.jsx');
 
 var routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <Route path="properties" component={Properties} />
+      <Route path="properties/:id" component={Property} />
     </Route>
   </Router>
 );

@@ -5,4 +5,9 @@ class Api::PropertiesController < ApplicationController
     render :index
   end
 
+  def show
+    @property = Property.find(params[:id])
+    render :show
+  end
+
 end

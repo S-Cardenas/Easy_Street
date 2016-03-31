@@ -13,7 +13,7 @@ var ApiActions = {
   focusedProperty: function(property) {
     ApiDispatcher.dispatch({
       actionType: PropertyConstants.FOCUSED_PROPERTY,
-      property: property 
+      property: property
     });
   }
 };
