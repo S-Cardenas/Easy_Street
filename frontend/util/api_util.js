@@ -1,4 +1,5 @@
 var ApiActions = require('../actions/api_actions.js');
+var SessionActions = require('../actions/session_actions.js');
 
 var ApiUtil = {
 
@@ -26,6 +27,33 @@ var ApiUtil = {
       },
       error: function() {
         console.log("Didn't find the property.");
+      }
+    });
+  },
+
+	login: function(credentials, callback) {
+		$.ajax({
+			type: "POST",
+			url: "/api/session",
+			dataType: "JSON",
+			data: credentials,
+			success: function(currentUser) {
+				SessionActions.currentUserReceived(currentUser);
+				callback && callback();
+			}
+		});
+	},
+
+	fetchCurrentUser: function(completion) {
+    $.ajax({
+      type: "GET",
+      url: "/api/session",
+      dataType: "JSON",
+      success: function(currentUser) {
+        SessionActions.currentUserReceived(currentUser);
+      },
+      complete: function() {
+        completion && completion();
       }
     });
   }
