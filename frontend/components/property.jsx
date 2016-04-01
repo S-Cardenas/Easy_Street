@@ -4,6 +4,8 @@ var ImgShow = require('./img_show.jsx');
 var Map = require('./map.jsx');
 var PropertyStore = require('../stores/property');
 var ApiUtil = require('../util/api_util.js');
+var ImageStore = require('../stores/image');
+var ApiActions = require('../actions/api_actions');
 
 var Property = React.createClass({
 
@@ -19,10 +21,12 @@ var Property = React.createClass({
   componentWillReceiveProps: function(newProps) {
     // this.setState({focusedProperty: PropertyStore.focusedProperty() });
     ApiUtil.fetchProperty(newProps.params.id);
+		ApiActions.focusImage(null);
   },
 
   componentWillUnmount: function() {
     this.listener.remove();
+		ApiActions.focusedProperty(null);
   },
 
   _onChange: function() {

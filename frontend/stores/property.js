@@ -22,6 +22,10 @@ PropertyStore.focusedProperty = function() {
   return _focusedProperty;
 };
 
+PropertyStore.resetFocusedProperty = function() {
+	_focusedProperty = null;
+};
+
 PropertyStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case PropertyConstants.PROPERTIES_RECEIVED:

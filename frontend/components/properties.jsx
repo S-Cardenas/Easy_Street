@@ -7,7 +7,7 @@ var PropertyStore = require('../stores/property');
 var Properties = React.createClass({
 
   getInitialState: function() {
-    return { focusedProperty: PropertyStore.focusedProperty() };
+    return { focusedProperty: null };
   },
 
   componentDidMount: function() {
@@ -15,8 +15,9 @@ var Properties = React.createClass({
 
   },
 
-  componentWillunmount: function() {
+  componentWillUnmount: function() {
     this.listener.remove();
+
   },
 
   _onChange: function() {

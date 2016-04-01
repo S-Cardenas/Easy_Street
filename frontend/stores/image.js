@@ -22,14 +22,18 @@ ImageStore.focusedImage = function() {
   return _focusedImage;
 };
 
+ImageStore.removeFocusedImage = function() {
+	_focusedImage = null;
+};
+
 ImageStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case ImageConstants.IMAGES_RECEIVED:
-      resetImages(payload.images);
+      resetImages(payload.image);
       ImageStore.__emitChange();
       break;
     case ImageConstants.FOCUSED_IMAGE:
-      _focusedImage(payload.images);
+      resetFocusedImage(payload.image);
       ImageStore.__emitChange();
       break;
   }
