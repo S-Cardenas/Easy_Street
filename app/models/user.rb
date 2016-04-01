@@ -1,12 +1,13 @@
 class User < ActiveRecord::Base
 	validates :username, :password_digest, :session_token, presence: true
+	validates :username, :session_token, uniqueness: true
 	validates :password, length: { minimum: 6, allow_nil: true }
 
 	attr_reader :password
 
 	has_many :properties,
 		class_name: "Property",
-		priimary_key: :id,
+		primary_key: :id,
 		foreign_key: :author_id
 
 	has_many :bookmarks,
