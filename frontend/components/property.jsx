@@ -1,5 +1,6 @@
 var React = require('react');
 var PropertyInfo = require('./property_info.jsx');
+var ImgShow = require('./img_show.jsx');
 var Map = require('./map.jsx');
 var PropertyStore = require('../stores/property');
 var ApiUtil = require('../util/api_util.js');
@@ -38,6 +39,7 @@ var Property = React.createClass({
       return (
         <div className="property-show-page">
           <PropertyInfo focusedProperty={this.state.focusedProperty}/>
+					<ImgShow focusedProperty={this.state.focusedProperty} />
           <Map focusedProperty={this.state.focusedProperty}/>
         </div>
       );

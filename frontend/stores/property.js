@@ -35,5 +35,4 @@ PropertyStore.__onDispatch = function(payload) {
   }
 };
 
-window.PropertyStore = PropertyStore;
 module.exports = PropertyStore;

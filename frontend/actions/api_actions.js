@@ -1,6 +1,6 @@
 var ApiDispatcher = require('../dispatcher/dispatcher.js');
 var PropertyConstants = require('../constants/property_constants.js');
-
+var ImageConstants = require('../constants/image_constants.js');
 
 var ApiActions = {
   receiveAllProperties: function(properties) {
@@ -15,7 +15,14 @@ var ApiActions = {
       actionType: PropertyConstants.FOCUSED_PROPERTY,
       property: property
     });
-  }
+  },
+
+	focusImage: function(image) {
+		ApiDispatcher.dispatch({
+			actionType: ImageConstants.FOCUSED_IMAGE,
+			image: image
+		});
+	}
 };
 
 module.exports = ApiActions;
