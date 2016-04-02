@@ -3,7 +3,7 @@ var SessionConstants = require('../constants/session_constants');
 
 var SessionActions = {
 	currentUserReceived: function(currentUser) {
-		ApIDispatcher.dispatch({
+		ApiDispatcher.dispatch({
 			actionType: SessionConstants.CURRENT_USER_RECEIVED,
 			currentUser: currentUser
 		});

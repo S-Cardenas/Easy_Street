@@ -31,15 +31,16 @@ var ApiUtil = {
     });
   },
 
-	login: function(credentials, callback) {
+	login: function(credentials) {
+
 		$.ajax({
 			type: "POST",
 			url: "/api/session",
 			dataType: "JSON",
-			data: credentials,
+			data: { user: credentials },
 			success: function(currentUser) {
+				debugger;
 				SessionActions.currentUserReceived(currentUser);
-				callback && callback();
 			}
 		});
 	},

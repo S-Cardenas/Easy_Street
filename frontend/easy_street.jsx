@@ -8,7 +8,7 @@ var App = require('./components/app.jsx');
 var Properties = require('./components/properties.jsx');
 var Property = require('./components/property.jsx');
 var LoginForm = require('./components/login_form.jsx');
-// var SessionStore = require('');
+var SessionStore = require('./stores/session_store.js');
 // var Apiutil = require('./util/api_util');
 
 var routes = (
@@ -16,9 +16,9 @@ var routes = (
     <Route path="/" component={App}>
       <Route path="properties" component={Properties} />
       <Route path="properties/:id" component={Property} />
+			<Route path="login" component={LoginForm} />
     </Route>
 
-		<Route path="/login" component={LoginForm} />
 
   </Router>
 );
@@ -30,21 +30,21 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 });
 
-function _requireLoggedIn(nextState, replace, asyncCompletionCallback) {
-  if (!SessionStore.currentUserHasBeenFetched()) {
-    ApiUtil.fetchCurrentUser(_redirectIfNotLoggedIn);
-  } else {
-    _redirectIfNotLoggedIn();
-  }
-
-  function _redirectIfNotLoggedIn() {
-    if (!SessionStore.isLoggedIn()) {
-      replace("/login");
-    }
-
-    asyncCompletionCallback();
-  }
-}
+// function _requireLoggedIn(nextState, replace, asyncCompletionCallback) {
+//   if (!SessionStore.currentUserHasBeenFetched()) {
+//     ApiUtil.fetchCurrentUser(_redirectIfNotLoggedIn);
+//   } else {
+//     _redirectIfNotLoggedIn();
+//   }
+//
+//   function _redirectIfNotLoggedIn() {
+//     if (!SessionStore.isLoggedIn()) {
+//       replace("/login");
+//     }
+//
+//     asyncCompletionCallback();
+//   }
+// }
 
 //
 // var Search = React.createClass({

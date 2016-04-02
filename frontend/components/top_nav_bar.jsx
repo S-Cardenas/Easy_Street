@@ -1,7 +1,49 @@
 var React = require('react');
+var SessionStore = require('../stores/session_store.js');
+
+
+var SignInComp = React.createClass({
+
+		getInitialState: function() {
+			return ({ loggedIn: false });
+		},
+
+		componentDidMount : function() {
+			this.listener = SessionStore.addListener(this._onChange);
+		},
+
+		_onChange: function() {
+			this.setState({ loggedIn: SessionStore.isLoggedIn() });
+		},
+
+		_loggedIn: function() {
+			return( <h3 className="SignIn-Comp">
+								<a href="#">My Properties</a>
+								<a href="#">My Searches</a>
+							</h3>
+						);
+		},
+
+		_loggedOut: function() {
+		 	return (<h3 className="SignIn-Comp">
+								<a href="#">Sign In</a>
+								<a href="#">Register (It's Free)</a>
+							</h3>
+						);
+		},
+
+		render: function() {
+			if (this.state.loggedIn) {
+				return this._loggedIn();
+			}
+			else {
+				return this._loggedOut();
+			}
+
+		}
+});
 
 var TopNavBar = React.createClass({
-
 
 	render: function() {
 		return(
@@ -12,10 +54,8 @@ var TopNavBar = React.createClass({
 						<a href="#">Blog</a>
 					</h3>
 
-					<h4 className="header-top-right">
-						<a href="#">Sign In</a>
-						<a href="#">Register(It's Free!)</a>
-					</h4>
+				<SignInComp />
+
 				</nav>
 			</div>
 		);

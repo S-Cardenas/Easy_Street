@@ -2,27 +2,21 @@ var React = require('react');
 var ApiUtil = require('../util/api_util');
 
 var LoginForm = React.createClass({
-	contextTypes: {
-		router: React.PropTypes.object.isRequired
-	},
 
 	getInitialState: function() {
-		return {name: "", password: ""};
+		return {username: "", password: ""};
 	},
 
 	handleSubmit: function(e) {
 		e.preventDefault();
 
-		var router = this.context.router;
+		ApiUtil.login(this.state);
 
-		ApiUtil.login(this.state, function() {
-			router.push("/bookmarks");
-		});
 		// Use router.replace('/properties') for the time being
 	},
 
 	updateName: function(e) {
-		this.setState({ name: e.currentTarget.value });
+		this.setState({ username: e.currentTarget.value });
 	},
 
 	updatePassword: function(e) {
@@ -35,11 +29,11 @@ var LoginForm = React.createClass({
 				<h1>Please Log In</h1>
 
 				<form onSubmit={this.handleSubmit}>
-					<label htmlFor="name">Name</label>
-					<input onChange={this.updateName} type="text" value={this.state.name}/>
+					<label htmlFor="username">Username</label>
+					<input onChange={this.updateName} type="text" value={this.state.username}/>
 
 					<label htmlFor="password">Password</label>
-					<input onChange={this.updatePasword} type="password" value={this.state.password}/>
+					<input onChange={this.updatePassword} type="password" value={this.state.password}/>
 
 					<button>Submit</button>
 
