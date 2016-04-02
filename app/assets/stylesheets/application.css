@@ -45,6 +45,18 @@ body {
   color: #000;
 }
 
+.background {
+	/*z-index: -1;*/
+	background: url('manhattan.jpg');
+	width: 100%;
+	height: 1000px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	opacity: 0.8;
+}
+
 ul {
   list-style: none;
 }
@@ -98,14 +110,16 @@ img {
   font-weight: bold;
 }
 
-.header-nav {
+.header-nav-top {
   margin: 0 auto;
   width: 900px;
   /*height: 200px;*/
-  padding: 2.5px 0;
+  padding: 2.5px 10px;
   position: relative;
 	border-bottom: 1px solid #ccc;
 	color: #0080c6;
+	background-color: white;
+	/*opacity: 0.7;*/
 }
 
 .header-top-left {
@@ -122,7 +136,7 @@ img {
 	background: white;
 	border: 1px solid #0080c6;
 	width: 220px;
-	padding: 20px;
+	padding: 20px 20px 0 20px;
 	font-weight: 400;
 }
 
@@ -130,12 +144,18 @@ img {
 	color: #0080c6;
 	position: absolute;
 	display: none;
+	z-index: 1000;
 	/*margin-bottom: 20px;*/
 }
 
 .NYC-list li {
-
 	margin-bottom: 20px;
+}
+
+.NYC-list li:hover {
+	margin-bottom: 20px;
+	font-weight: 700;
+	text-decoration: underline;
 }
 
 
@@ -160,23 +180,132 @@ img {
 	border: 1px solid #fdc435;
 }
 
+.header-nav-bottom {
+	margin: 0 auto;
+	width: 900px;
+	padding-top: 2.5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 12px;
+	position: relative;
+	border-bottom: 5px solid #0080c6;
+	color: #0080c6;
+	background-color: white;
+	/*opacity: 0.7;*/
+	/*color: #0080c6;*/
+}
+
+
+.header-bottom-left p {
+	float: left;
+	font-size: 24px;
+	margin-right: 45px;
+}
+
+.header-bottom-left ul {
+	float: left;
+	margin-top: 8px;
+}
+
+.header-bottom-left li {
+	float: left;
+	margin-right: 45px;
+}
+
+.header-bottom-left > ul > li:last-child:hover ul {
+	display: block;
+
+}
+
+.header-bottom-left > ul > li {
+	/*font-size: 20px;
+	border: 1px solid green;
+	margin-right: 40px;*/
+}
+
+.resources-list {
+	display: none;
+	position: absolute;
+	background: white;
+	border: 1px solid #0080c6;
+	width: 220px;
+	padding: 20px 20px 0 20px;
+	font-weight: 400;
+	top: 32px;
+	z-index: 1000;
+}
+
+.resources-list li {
+	margin-bottom: 20px;
+}
+
+.resources-list li:hover {
+	/*margin-bottom: 20px;*/
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+
+
+.header-nav-bottom span {
+	float: right;
+}
+
+
+.properties-page {
+	width: 918px;
+	margin: 0 auto;
+	background: white;
+	border: 1px solid white;
+}
 
 .property-index {
-	width: 900px;
+	width: 500px;
 	/*border: 1px dashed blue;*/
+	float: left;
 	margin: auto;
+	background: white;
+	padding: 0 10px;
+	padding-top: 10px;
+}
+
+.property-item {
+	/*border: 1px solid blue;*/
+	border-top: 1px solid black;
+	width: 525px;
+	margin-bottom: 10px;
+}
+
+.property-item:last-child {
+	/*border: 1px solid blue;*/
+	border-bottom: 1px solid black;
+}
+
+.property-item img {
+	float: left;
+	width: 175px;
+	height: 110px;
+	/*border: 1px solid red;*/
+	margin-right: 15px;
+	margin-top: 8px;
 }
 
 .property-listing {
-	border-top: 1px solid #000;
+	float: left;
+	/*border-top: 1px solid #000;*/
 	padding-top: 16px;
-	margin-top: 15px;
+	/*margin-top: 15px;*/
+	/*margin-left: 20px;*/
+	/*border: 1px solid green;*/
+	width: 330px;
 }
 
 .property-listing:last-child {
-	border-bottom: 1px solid #000;
+	/*border-bottom: 1px solid #000;*/
 	padding-bottom: 16px;
 }
+
+
 
 .property-address {
 	font-size: 16px;
@@ -186,6 +315,9 @@ img {
 .map {
 	width: 315px;
 	height: 340px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .images-item-main {

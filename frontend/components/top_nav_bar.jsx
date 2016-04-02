@@ -49,7 +49,7 @@ var TopNavBar = React.createClass({
 	render: function() {
 		return(
 			<div>
-				<nav className="header-nav group">
+				<nav className="header-nav-top group">
 					<h3 className="header-top-left">
 						<a href="#">New York City
 							<ul className="NYC-list">
@@ -63,9 +63,30 @@ var TopNavBar = React.createClass({
 					</h3>
 
 					<SignInComp />
+				</nav>
 
+				<nav className="header-nav-bottom group">
+					<h3 className="header-bottom-left">
+						<p>EasyStreets</p>
+						<ul>
+							<li>SALES</li>
+							<li>RENTALS</li>
+							<li>RESOURCES
+								<ul className="resources-list">
+									<li>Browse</li>
+									<li>Market Data</li>
+									<li>Mortgage</li>
+									<li>Tools</li>
+								</ul>
+							</li>
+						</ul>
+					</h3>
+
+					<span>Search Bar</span>
 
 				</nav>
+
+
 			</div>
 		);
 	}

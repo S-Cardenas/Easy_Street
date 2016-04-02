@@ -27,13 +27,15 @@ var PropertyIndex = React.createClass({
 
   render: function() {
     var myProperties = this.state.properties.map(function(property, i) {
-      return (
+			return(
+				<div className="property-item group">
+					<img src={property.pic_url} />
           <ul className="property-listing" key={i} onMouseEnter={this._focusProperty.bind(null, property)}>
             <li className="property-address">
               {property.address}
             </li>
             <li className="property-price">
-              {property.price} For Rent
+              ${property.price} For Rent
             </li>
             <li>
               {property.num_rooms} rooms
@@ -51,6 +53,7 @@ var PropertyIndex = React.createClass({
               Listed by {property.author_id}
             </li>
           </ul>
+				</div>
       );
     }.bind(this));
 

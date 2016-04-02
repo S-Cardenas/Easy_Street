@@ -10,7 +10,7 @@ class Property < ActiveRecord::Base
     foreign_key: :borough_id
 
   belongs_to :author,
-    class_name: "Author",
+    class_name: "User",
     primary_key: :id,
     foreign_key: :author_id
 

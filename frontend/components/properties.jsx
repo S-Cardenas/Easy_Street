@@ -26,7 +26,7 @@ var Properties = React.createClass({
 
   render: function() {
     return(
-      <div className="properties-page">
+      <div className="properties-page group">
         <PropertiesIndex />
         <Map focusedProperty={this.state.focusedProperty} />
         {this.props.children}
