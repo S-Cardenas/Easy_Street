@@ -55,12 +55,18 @@ img {
   height: auto;
 }
 
+.group:after {
+	content: "";
+  display: block;
+  clear: both;
+}
+
 
 .header {
   background-color: #000;
 }
 
-.header-nav {
+.header-border {
   margin: 0 auto;
   width: 900px;
   /*height: 200px;*/
@@ -92,31 +98,94 @@ img {
   font-weight: bold;
 }
 
-.property-index {
+.header-nav {
+  margin: 0 auto;
   width: 900px;
-  /*border: 1px dashed blue;*/
-  margin: auto;
+  /*height: 200px;*/
+  padding: 2.5px 0;
+  position: relative;
+	border-bottom: 1px solid #ccc;
+	color: #0080c6;
+}
+
+.header-top-left {
+	float: left;
+}
+
+.header-top-left a {
+	padding: 5px;
+	margin-right: 10px;
+}
+
+.header-top-left > a:hover > ul {
+	display: block;
+	background: white;
+	border: 1px solid #0080c6;
+	width: 220px;
+	padding: 20px;
+	font-weight: 400;
+}
+
+.NYC-list {
+	color: #0080c6;
+	position: absolute;
+	display: none;
+	/*margin-bottom: 20px;*/
+}
+
+.NYC-list li {
+
+	margin-bottom: 20px;
+}
+
+
+.SignIn-Comp {
+	display:block;
+	float: right;
+}
+
+.SignIn-Comp a:first-child {
+	font-size: 12px;
+	padding: 5px;
+
+	letter-spacing: 1px;
+	margin-right: 5px;
+}
+
+.SignIn-Comp a:last-child {
+	font-size: 14px;
+	font-weight: 900;
+	color: black;
+	padding: 5px 12px;
+	border: 1px solid #fdc435;
+}
+
+
+.property-index {
+	width: 900px;
+	/*border: 1px dashed blue;*/
+	margin: auto;
 }
 
 .property-listing {
-  border-top: 1px solid #000;
-  padding-top: 16px;
-  margin-top: 15px;
+	border-top: 1px solid #000;
+	padding-top: 16px;
+	margin-top: 15px;
 }
 
 .property-listing:last-child {
-  border-bottom: 1px solid #000;
-  padding-bottom: 16px;
+	border-bottom: 1px solid #000;
+	padding-bottom: 16px;
 }
 
 .property-address {
-  font-size: 16px;
-  color: #0080c6;
+	font-size: 16px;
+	color: #0080c6;
 }
 
 .map {
-  width: 315px;
-  height: 340px;
+	width: 315px;
+	height: 340px;
 }
 
 .images-item-main {

@@ -28,5 +28,5 @@ COMMANDS:
 
 ### Git Hub ###
 Clone repository:
-1. Copy HTTPS from github site
+1. Copy HTTPS url from github site
 2. On terminal: git clone url
