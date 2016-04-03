@@ -32,22 +32,22 @@ var PropertyInfo = React.createClass({
             {this.props.focusedProperty.address}
           </li>
           <li className="property-price-show">
-            ${this.props.focusedProperty.price} For Rent
+            <b>${this.props.focusedProperty.price}</b> For Rent
           </li>
-          <li>
+          <li className="property-show-rooms">
             {this.props.focusedProperty.num_rooms} rooms
           </li>
-          <li>
+          <li className="property-show-baths">
             {this.props.focusedProperty.num_bathroom} baths
           </li>
           <li>
-            {this.props.focusedProperty.area} ft²
+            Area: {this.props.focusedProperty.area} ft²
           </li>
-          <li>
-            Property in {this.props.focusedProperty.borough_id}
+          <li className="property-show-property">
+            Property in {this.props.focusedProperty.borough}
           </li>
-          <li>
-            Listed by {this.props.focusedProperty.author_id}
+          <li className="property-show-author">
+            Listed by {this.props.focusedProperty.author}
           </li>
         </ul>
       );

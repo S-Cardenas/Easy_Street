@@ -2,6 +2,7 @@ var React = require('react');
 var PropertyInfo = require('./property_info.jsx');
 var ImgShow = require('./img_show.jsx');
 var Map = require('./map.jsx');
+var Description = require('./property_description.jsx');
 var PropertyStore = require('../stores/property');
 var ApiUtil = require('../util/api_util.js');
 var ImageStore = require('../stores/image');
@@ -44,7 +45,8 @@ var Property = React.createClass({
         <div className="property-show-page group">
 					<ImgShow focusedProperty={this.state.focusedProperty} />
           <PropertyInfo focusedProperty={this.state.focusedProperty}/>
-          <Map focusedProperty={this.state.focusedProperty}/>
+					<Map focusedProperty={this.state.focusedProperty}/>
+					<Description focusedProperty={this.state.focusedProperty}/>
         </div>
       );
     }
