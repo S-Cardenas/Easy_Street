@@ -27,11 +27,11 @@ var PropertyInfo = React.createClass({
     }
     else {
       return (
-        <ul className="property-index">
-          <li className="property-address">
+        <ul className="property-show-details">
+          <li className="property-address-show">
             {this.props.focusedProperty.address}
           </li>
-          <li className="property-price">
+          <li className="property-price-show">
             ${this.props.focusedProperty.price} For Rent
           </li>
           <li>

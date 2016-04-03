@@ -47,12 +47,14 @@ var Images = React.createClass({
 			var MainImage = this.state.focusedImage? this.state.focusedImage : this.props.focusedProperty.pictures[0];
 
 			return (
-				<ul className="images-list">
-					<li className="images-item-main">
+				<div className="images-container">
+					<div className="images-item-main">
 						<img src={MainImage.url} alt="#"/>
-					</li>
-					{ myImages }
-				</ul>
+					</div>
+					<ul className="images-list">
+						{ myImages }
+					</ul>
+				</div>
 			);
 		}
 	}
