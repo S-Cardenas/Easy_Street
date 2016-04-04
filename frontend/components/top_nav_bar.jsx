@@ -1,6 +1,6 @@
 var React = require('react');
 var SessionStore = require('../stores/session_store.js');
-
+var LoginForm = require('./login_form.jsx');
 
 var SignInComp = React.createClass({
 
@@ -24,19 +24,16 @@ var SignInComp = React.createClass({
 						);
 		},
 
+		_modelToggle: function(e) {
+			e.preventDefault();
+			$("#model").addClass("model-is-active");
+		},
+
 		_loggedOut: function() {
 		 	return (<h3 className="SignIn-Comp">
-								<a href="#">Sign In</a>
+								<a href="#" onClick={this._modelToggle}>Sign In</a>
 								<a href="#">Register (It's Free)</a>
-								<div id="model" className="">
-									<form>
-										<h1>
-											<a href="#">Cancel</a>
-											<li>Sign In</li>
-										</h1>
-										<
-									</form>
-								</div>
+								<LoginForm />
 							</h3>
 						);
 		},

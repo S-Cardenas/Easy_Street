@@ -36,6 +36,7 @@ var Images = React.createClass({
 			);
 		}
 		else {
+			debugger;
 			var myImages = this.props.focusedProperty.pictures.map(function(picture, i) {
 				return (
 					<li className="images-item" key={i} onMouseEnter={this._focusImage.bind(null, picture)}>

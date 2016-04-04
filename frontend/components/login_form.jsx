@@ -9,9 +9,7 @@ var LoginForm = React.createClass({
 
 	handleSubmit: function(e) {
 		e.preventDefault();
-
 		ApiUtil.login(this.state);
-
 		// Use router.replace('/properties') for the time being
 	},
 
@@ -25,21 +23,36 @@ var LoginForm = React.createClass({
 
 	render: function() {
 		return (
-			<div>
-				<h1>Please Log In</h1>
+			<section id="model" className="model">
+				<h1>
+					<div>Please Log In</div>
+				</h1>
+				<p>
+					Register for free to access all EasyStreets has to offer including premium data and advanced features.
+				</p>
 
-				<form onSubmit={this.handleSubmit}>
-					<label htmlFor="username">Username</label>
-					<input onChange={this.updateName} type="text" value={this.state.username}/>
+				<form onSubmit={this.handleSubmit} className="sign-in-form">
+					<div className="sign-in-input">
+						<label htmlFor="username">Username</label>
+						<br/>
+						<input onChange={this.updateName} type="text" value={this.state.username}/>
+					</div>
 
-					<label htmlFor="password">Password</label>
-					<input onChange={this.updatePassword} type="password" value={this.state.password}/>
+					<div className="sign-in-input">
+						<label htmlFor="password">Password</label>
+						<br/>
+						<input onChange={this.updatePassword} type="password" value={this.state.password}/>
+					</div>
 
-					<button>Submit</button>
+					<div className="sign-in-submit">
+						<button>Log In</button>
+					</div>
+
+			    <div className="modal-screen"></div>
 
 				</form>
 
-			</div>
+			</section>
 		);
 	}
 

@@ -2,6 +2,7 @@ var React = require('react');
 var PropertyStore = require('../stores/property.js');
 var ApiUtil = require('../util/api_util.js');
 var ApiActions = require('../actions/api_actions.js');
+var Link = require('react-router').Link;
 
 var PropertyIndex = React.createClass({
   getInitialState: function() {
@@ -29,30 +30,32 @@ var PropertyIndex = React.createClass({
     var myProperties = this.state.properties.map(function(property, i) {
 			return(
 				<div className="property-item group">
-					<img src={property.pic_url} />
-          <ul className="property-listing" key={i} onMouseEnter={this._focusProperty.bind(null, property)}>
-            <li className="property-address">
-              {property.address}
-            </li>
-            <li className="property-price">
-              ${property.price} For Rent
-            </li>
-            <li>
-              {property.num_rooms} rooms
-            </li>
-            <li>
-              {property.num_bathroom} baths
-            </li>
-            <li>
-              {property.area} ft²
-            </li>
-            <li>
-              Property in {property.borough_id}
-            </li>
-            <li>
-              Listed by {property.author_id}
-            </li>
-          </ul>
+					<Link to={"/properties/" + property.id }>
+						<img src={property.pic_url} />
+	          <ul className="property-listing" key={i} onMouseEnter={this._focusProperty.bind(null, property)}>
+	            <li className="property-address">
+	              {property.address}
+	            </li>
+	            <li className="property-price">
+	              ${property.price} For Rent
+	            </li>
+	            <li>
+	              {property.num_rooms} rooms
+	            </li>
+	            <li>
+	              {property.num_bathroom} baths
+	            </li>
+	            <li>
+	              {property.area} ft²
+	            </li>
+	            <li>
+	              Property in {property.borough_id}
+	            </li>
+	            <li>
+	              Listed by {property.author_id}
+	            </li>
+	          </ul>
+					</Link>
 				</div>
       );
     }.bind(this));
