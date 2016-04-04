@@ -27,8 +27,16 @@ var SignInComp = React.createClass({
 		_loggedOut: function() {
 		 	return (<h3 className="SignIn-Comp">
 								<a href="#">Sign In</a>
-								<a href="#">Register (It's Free)
-								</a>
+								<a href="#">Register (It's Free)</a>
+								<div id="model" className="">
+									<form>
+										<h1>
+											<a href="#">Cancel</a>
+											<li>Sign In</li>
+										</h1>
+										<
+									</form>
+								</div>
 							</h3>
 						);
 		},

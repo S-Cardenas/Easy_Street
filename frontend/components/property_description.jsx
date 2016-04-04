@@ -11,9 +11,12 @@ var Description = React.createClass({
 		}
 		else {
 			return (
-				<p className="property-description">
-					{this.props.focusedProperty.description}
-				</p>
+				<div className="property-description">
+					<h1>Description</h1>
+					<p>
+						{this.props.focusedProperty.description}
+					</p>
+				</div>
 			);
 		}
 	}

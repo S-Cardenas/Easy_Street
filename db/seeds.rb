@@ -23,7 +23,7 @@ b5 = Borough.create!(name: 'Staten Island')
 
 #Descriptions
 def d1
-  return "Description
+  return "
   MODERN LIVING IN CHARMING CHELSEA BROWNSTONE
 
   With exquisite modern touches, this gorgeous, fully renovated one bedroom home has plenty of built-in furniture and shelving to maximize storage space. Partially furnished, the apartment features one-of-a-kind artwork on the walls, exposed brick, a working fireplace, a flat screen TV mounted to the bedroom wall, sleek marble-tiled spa-like bath and high ceilings. City-quiet windows make this home as silent as it is beautiful while sacrificing none of the excellent natural light. This rare gem, just two flights up, is available for a May 1 move in, pending board approval.
