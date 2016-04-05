@@ -1,6 +1,7 @@
 var React = require('react');
 var SessionStore = require('../stores/session_store.js');
 var LoginForm = require('./login_form.jsx');
+var Link = require('react-router').Link;
 
 var SignInComp = React.createClass({
 
@@ -17,9 +18,9 @@ var SignInComp = React.createClass({
 		},
 
 		_loggedIn: function() {
-			return( <h3 className="c">
-								<a href="#">My Properties</a>
-								<a href="#">My Searches</a>
+			return( <h3 className="SignIn-Comp">
+								<a href="#">Account Info</a>
+								<a href="#">My Bookmarks</a>
 							</h3>
 						);
 		},
@@ -74,7 +75,9 @@ var TopNavBar = React.createClass({
 					<h3 className="header-bottom-left">
 						<p>EasyStreets</p>
 						<ul>
-							<li>SALES</li>
+							<li>
+								<Link to={"/properties"}>ALL PROPERTIES</Link>
+							</li>
 							<li>RENTALS</li>
 							<li>RESOURCES
 								<ul className="resources-list">

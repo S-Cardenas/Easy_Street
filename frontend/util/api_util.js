@@ -39,7 +39,6 @@ var ApiUtil = {
 			dataType: "JSON",
 			data: { user: credentials },
 			success: function(currentUser) {
-				debugger;
 				SessionActions.currentUserReceived(currentUser);
 			}
 		});

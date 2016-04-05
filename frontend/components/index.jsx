@@ -29,10 +29,10 @@ var PropertyIndex = React.createClass({
   render: function() {
     var myProperties = this.state.properties.map(function(property, i) {
 			return(
-				<div className="property-item group">
+				<div className="property-item group"  key={i} onMouseEnter={this._focusProperty.bind(null, property)} >
 					<Link to={"/properties/" + property.id }>
 						<img src={property.pic_url} />
-	          <ul className="property-listing" key={i} onMouseEnter={this._focusProperty.bind(null, property)}>
+	          <ul className="property-listing">
 	            <li className="property-address">
 	              {property.address}
 	            </li>

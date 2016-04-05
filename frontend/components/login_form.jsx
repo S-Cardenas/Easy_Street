@@ -21,6 +21,11 @@ var LoginForm = React.createClass({
 		this.setState({ password: e.currentTarget.value });
 	},
 
+	_modelToggle: function(e) {
+		e.preventDefault();
+		$("#model").removeClass("model-is-active");
+	},
+
 	render: function() {
 		return (
 			<section id="model" className="model">
@@ -45,10 +50,10 @@ var LoginForm = React.createClass({
 					</div>
 
 					<div className="sign-in-submit">
-						<button>Log In</button>
+						<button>Submit</button>
 					</div>
 
-			    <div className="modal-screen"></div>
+			    <div className="modal-screen" onClick={this._modelToggle}></div>
 
 				</form>
 

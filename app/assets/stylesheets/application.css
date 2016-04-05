@@ -43,6 +43,7 @@ body {
   font-size: 12px;
   line-height: 1.1666666666;
   color: #000;
+	/*z-index: 1000;*/
 }
 
 .background {
@@ -111,21 +112,19 @@ img {
 
 .header-nav-top {
   margin: 0 auto;
-  width: 900px;
-  /*height: 200px;*/
+  width: 1000px;
   padding: 2.5px 10px;
   position: relative;
 	border-bottom: 1px solid #ccc;
 	color: #0080c6;
 	background-color: white;
-	/*opacity: 0.7;*/
 }
 
 .header-top-left {
 	float: left;
 }
 
-.header-top-left a {
+.header-top-left > a {
 	padding: 5px;
 	margin-right: 10px;
 }
@@ -144,7 +143,6 @@ img {
 	position: absolute;
 	display: none;
 	z-index: 1000;
-	/*margin-bottom: 20px;*/
 }
 
 .NYC-list li {
@@ -181,7 +179,7 @@ img {
 
 .header-nav-bottom {
 	margin: 0 auto;
-	width: 900px;
+	width: 1000px;
 	padding-top: 2.5px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -190,8 +188,6 @@ img {
 	border-bottom: 5px solid #0080c6;
 	color: #0080c6;
 	background-color: white;
-	/*opacity: 0.7;*/
-	/*color: #0080c6;*/
 }
 
 
@@ -216,11 +212,6 @@ img {
 
 }
 
-.header-bottom-left > ul > li {
-	/*font-size: 20px;
-	border: 1px solid green;
-	margin-right: 40px;*/
-}
 
 .resources-list {
 	display: none;
@@ -239,7 +230,6 @@ img {
 }
 
 .resources-list li:hover {
-	/*margin-bottom: 20px;*/
 	font-weight: 700;
 	text-decoration: underline;
 }
@@ -252,15 +242,15 @@ img {
 
 
 .properties-page {
-	width: 918px;
+	width: 1018px;
 	margin: 0 auto;
 	background: white;
 	border: 1px solid white;
 }
 
+
 .property-index {
 	width: 500px;
-	/*border: 1px dashed blue;*/
 	float: left;
 	margin: auto;
 	background: white;
@@ -269,14 +259,12 @@ img {
 }
 
 .property-item {
-	/*border: 1px solid blue;*/
 	border-top: 1px solid black;
 	width: 525px;
 	margin-bottom: 10px;
 }
 
 .property-item:last-child {
-	/*border: 1px solid blue;*/
 	border-bottom: 1px solid black;
 }
 
@@ -284,23 +272,17 @@ img {
 	float: left;
 	width: 175px;
 	height: 110px;
-	/*border: 1px solid red;*/
 	margin-right: 15px;
 	margin-top: 8px;
 }
 
 .property-listing {
 	float: left;
-	/*border-top: 1px solid #000;*/
 	padding-top: 16px;
-	/*margin-top: 15px;*/
-	/*margin-left: 20px;*/
-	/*border: 1px solid green;*/
 	width: 330px;
 }
 
 .property-listing:last-child {
-	/*border-bottom: 1px solid #000;*/
 	padding-bottom: 16px;
 }
 
@@ -318,7 +300,7 @@ img {
 }
 
 .property-show-page {
-	width: 920px;
+	width: 1020px;
 	margin: 0 auto;
 	background-color: white;
 }
@@ -328,7 +310,6 @@ img {
 	padding-top: 15px;
 	padding-left: 10px;
 	border-bottom: 5px solid black;
-	/*border: 1px dashed blue;*/
 	float: left;
 	margin-right: 10px;
 	margin-left: 10px;
@@ -392,7 +373,6 @@ img {
 	font-size: 22px;
 	border-bottom: 1px solid #d3d3d3;
 	padding-bottom: 10px;
-	/*font-weight: 700;*/
 }
 
 .for-rent {
@@ -427,7 +407,6 @@ img {
 .property-description {
 	padding-left: 10px;
 	padding-right: 10px;
-	/*border: 1px solid blue;*/
 }
 
 .property-description h1 {
@@ -445,12 +424,17 @@ img {
 }
 
 .model-is-active {
+	position: absolute;
+	top: 0;
+	left: 300px;
 	display: block;
 	background-color: white;
 	width: 350px;
 	height: 400px;
-	margin: 50px auto;
+	margin-top: 150px;
+	/*margin-right: 1000px;*/
 	z-index: 1000;
+	border: 5px solid white;
 }
 
 .model-is-active h1 {
@@ -469,6 +453,7 @@ img {
 	padding-left: 15px;
 }
 
+
 .model-is-active p {
 	margin: 10px 30px;
 	font-size: 14px;
@@ -476,7 +461,6 @@ img {
 
 .sign-in-form {
 	margin: 20px;
-	/*border: 1px solid green;*/
 }
 
 .sign-in-form div {
@@ -516,7 +500,7 @@ img {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 1072px;
 	z-index: -1;
 	background: rgba(0, 0, 0, 0.9);
 }
