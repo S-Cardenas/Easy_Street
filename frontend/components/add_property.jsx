@@ -60,6 +60,9 @@ var AddProperty = React.createClass({
 
 				ApiUtil.createProperty(formData);
 			}
+			else {
+				console.log('didnt find the address');
+			}
 		}.bind(this));
 	},
 
