@@ -31,8 +31,21 @@ var ApiUtil = {
     });
   },
 
-	login: function(credentials) {
+	createProperty: function(formData) {
+		$.ajax({
+			type: 'POST',
+			url: '/api/properties',
+			processData: false,
+			contentType: false,
+			dataType: 'JSON',
+			data: formData,
+			success: function(property) {
+				ApiActions.receiveProperty(property);
+			}
+		});
+	},
 
+	login: function(credentials) {
 		$.ajax({
 			type: "POST",
 			url: "/api/session",
@@ -40,6 +53,30 @@ var ApiUtil = {
 			data: { user: credentials },
 			success: function(currentUser) {
 				SessionActions.currentUserReceived(currentUser);
+			}
+		});
+	},
+
+	signUp: function(credentials) {
+
+		$.ajax({
+			type: "POST",
+			url: "/api/users",
+			dataType: "JSON",
+			data: { user: credentials },
+			success: function(currentUser) {
+				SessionActions.currentUserReceived(currentUser);
+			}
+		});
+	},
+
+	logOut: function() {
+		$.ajax({
+			type: "DELETE",
+			url: "/api/session",
+			dataType: "JSON",
+			success: function() {
+				SessionActions.logout();
 			}
 		});
 	},
@@ -52,9 +89,9 @@ var ApiUtil = {
       success: function(currentUser) {
         SessionActions.currentUserReceived(currentUser);
       },
-      complete: function() {
-        completion && completion();
-      }
+      // complete: function() {
+      //   completion && completion();
+      // }
     });
   }
 };

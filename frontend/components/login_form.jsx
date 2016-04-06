@@ -53,7 +53,7 @@ var LoginForm = React.createClass({
 						<button>Submit</button>
 					</div>
 
-			    <div className="modal-screen" onClick={this._modelToggle}></div>
+			    <div className="model-screen" onClick={this._modelToggle}></div>
 
 				</form>
 

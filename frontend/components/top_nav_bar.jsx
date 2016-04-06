@@ -1,7 +1,9 @@
 var React = require('react');
 var SessionStore = require('../stores/session_store.js');
 var LoginForm = require('./login_form.jsx');
+var SignupForm = require('./signup_form.jsx');
 var Link = require('react-router').Link;
+var ApiUtil = require('../util/api_util');
 
 var SignInComp = React.createClass({
 
@@ -17,27 +19,56 @@ var SignInComp = React.createClass({
 			this.setState({ loggedIn: SessionStore.isLoggedIn() });
 		},
 
+		_signOut: function() {
+			ApiUtil.logOut();
+		},
+
 		_loggedIn: function() {
-			return( <h3 className="SignIn-Comp">
-								<a href="#">Account Info</a>
-								<a href="#">My Bookmarks</a>
-							</h3>
+			return(
+								<ul className="SignIn-Comp">
+									<li>Account Info
+										<ul className="account-info">
+											<li>
+												<a href="#">Account Settings</a>
+											</li>
+											<li>
+												<a href="#" onClick={this._signOut}>Sign Out</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">My Bookmarks</a>
+									</li>
+								</ul>
 						);
 		},
 
-		_modelToggle: function(e) {
+		_loggedOut: function() {
+			return (
+							<div>
+								<ul className="SignIn-Comp">
+									<li>
+										<a href="#" onClick={this._modelToggleSignIn}>Sign In</a>
+									</li>
+									<li>
+										<a href="#" onClick={this._modelToggleRegister}>Register (It's Free)</a>
+									</li>
+								</ul>
+								<LoginForm />
+								<SignupForm />
+							</div>
+			);
+},
+		_modelToggleSignIn: function(e) {
 			e.preventDefault();
 			$("#model").addClass("model-is-active");
 		},
 
-		_loggedOut: function() {
-		 	return (<h3 className="SignIn-Comp">
-								<a href="#" onClick={this._modelToggle}>Sign In</a>
-								<a href="#">Register (It's Free)</a>
-								<LoginForm />
-							</h3>
-						);
+		_modelToggleRegister: function(e) {
+			e.preventDefault();
+			$("#model-signup").addClass("model-signup-is-active");
 		},
+
 
 		render: function() {
 			if (this.state.loggedIn) {

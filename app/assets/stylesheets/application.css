@@ -159,22 +159,52 @@ img {
 .SignIn-Comp {
 	display:block;
 	float: right;
+	/*border: 1px solid green;*/
+	margin-top: 7px;
 }
 
-.SignIn-Comp a:first-child {
+.account-info {
+	display: none;
+	position: absolute;
+	color: #0080c6;
+	z-index: 1000;
+	background: white;
+	border: 1px solid #0080c6;
+	width: 140px;
+	padding: 10px 10px 0 10px;
+	font-weight: 400;
+}
+
+.account-info > li {
+	margin-bottom: 10px;
+}
+
+.account-info > li:hover {
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.SignIn-Comp li:first-child:hover ul {
+	display: block;
+}
+
+.SignIn-Comp > li:first-child {
 	font-size: 12px;
 	padding: 5px;
-
 	letter-spacing: 1px;
 	margin-right: 5px;
 }
 
-.SignIn-Comp a:last-child {
+.SignIn-Comp > li:last-child {
 	font-size: 14px;
 	font-weight: 900;
 	color: black;
 	padding: 5px 12px;
 	border: 1px solid #fdc435;
+}
+
+.SignIn-Comp > li {
+	float: left;
 }
 
 .header-nav-bottom {
@@ -495,7 +525,7 @@ img {
 	margin-top: 20px;
 }
 
-.modal-screen {
+.model-screen {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -503,4 +533,101 @@ img {
 	height: 1072px;
 	z-index: -1;
 	background: rgba(0, 0, 0, 0.9);
+}
+
+
+.model-signup {
+	display: none;
+}
+
+.model-signup-is-active {
+	position: absolute;
+	top: 0;
+	left: 300px;
+	display: block;
+	background-color: white;
+	width: 350px;
+	height: 400px;
+	margin-top: 150px;
+	/*margin-right: 1000px;*/
+	z-index: 1000;
+	border: 5px solid white;
+}
+
+.model-signup-is-active h1 {
+	display: block;
+	padding: 18px;
+	margin: 0 auto;
+	background-color: #0080c6;
+
+}
+
+.model-signup-is-active > h1 > div {
+	margin: 0 auto;
+	width: 150px;
+	color: white;
+	font-size: 20px;
+	padding-left: 15px;
+}
+
+
+.model-signup-is-active p {
+	margin: 10px 30px;
+	font-size: 14px;
+}
+
+.model-signup-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1072px;
+	z-index: -1;
+	background: rgba(0, 0, 0, 0.9);
+}
+
+.add-property-div {
+	width: 1000px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 10px;
+}
+
+.add-property-div h1 {
+	color: #0080c6;
+	font-size: 20px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.add-property-div p {
+	font-style: bold;
+	font-size: 12px;
+	margin-bottom: 15px;
+}
+
+.add-property-input label {
+	font-size: 16px;
+}
+
+.numeric-input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 1px solid grey;
+	width: 150px;
+}
+
+.address-input {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 1px solid grey;
+	width: 300px;
+}
+
+.add-property-input textarea {
+	border: 1px solid grey;
+	width: 300px;
+	height: 100px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }

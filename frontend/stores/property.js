@@ -36,6 +36,10 @@ PropertyStore.__onDispatch = function(payload) {
       reset_focusedProperty(payload.property);
       PropertyStore.__emitChange();
       break;
+		case PropertyConstants.PROPERTY_RECEIVED:
+			reset_properties(payload.property);
+			PropertyStore.__emitChange();
+			break;
   }
 };
 

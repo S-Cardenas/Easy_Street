@@ -10,6 +10,13 @@ var ApiActions = {
     });
   },
 
+	reiveProperty: function(property) {
+		ApiDispatcher.dispatch({
+			actionType: PropertyConstants.PROPERTY_RECEIVED,
+			property: property
+		});
+	},
+
   focusedProperty: function(property) {
     ApiDispatcher.dispatch({
       actionType: PropertyConstants.FOCUSED_PROPERTY,

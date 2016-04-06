@@ -7,19 +7,18 @@ var hashHistory = require('react-router').hashHistory;
 var App = require('./components/app.jsx');
 var Properties = require('./components/properties.jsx');
 var Property = require('./components/property.jsx');
-var LoginForm = require('./components/login_form.jsx');
+var AddProperty = require('./components/add_property.jsx');
+
 var SessionStore = require('./stores/session_store.js');
-// var Apiutil = require('./util/api_util');
+var ApiUtil = require('./util/api_util.js');
 
 var routes = (
   <Router history={hashHistory}>
-    <Route path="/" component={App}>
+    <Route path="/" component={App} onEnter={ApiUtil.fetchCurrentUser}>
       <Route path="properties" component={Properties} />
       <Route path="properties/:id" component={Property} />
-			<Route path="login" component={LoginForm} />
+			<Route path="addproperty" component={AddProperty} />
     </Route>
-
-
   </Router>
 );
 
