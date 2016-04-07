@@ -3,13 +3,16 @@ var SessionActions = require('../actions/session_actions.js');
 
 var ApiUtil = {
 
-  fetchProperties: function() {
+  fetchProperties: function(apiCall, callback) {
     $.ajax({
       type: 'GET',
       dataType: "JSON",
-      url: "/api/properties",
+      url: "/api/" + apiCall ,
       success: function(properties) {
         ApiActions.receiveAllProperties(properties);
+				if (callback) {
+					callback();
+				}
       },
       error: function() {
         console.log("Didn't find the properties.");
@@ -41,6 +44,29 @@ var ApiUtil = {
 			data: formData,
 			success: function(property) {
 				ApiActions.receiveProperty(property);
+			}
+		});
+	},
+
+	fetchBookmarks: function() {
+		$.ajax({
+			type: 'GET',
+			url: '/api/bookmarks',
+			dataType: 'JSON',
+			success: function(bookmarks) {
+				ApiActions.receiveBookmarks(bookmarks);
+			}
+		});
+	},
+
+	addBookmark: function(property) {
+		$.ajax({
+			type: 'POST',
+			url: '/api/bookmarks',
+			dataType: 'JSON',
+			data: property,
+			success: function(bookmarks) {
+				ApiActions.receiveBookmarks(bookmarks);
 			}
 		});
 	},

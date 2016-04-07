@@ -124,12 +124,13 @@ img {
 	float: left;
 }
 
-.header-top-left > a {
+.header-top-left > ul > li {
 	padding: 5px;
 	margin-right: 10px;
+	float: left;
 }
 
-.header-top-left > a:hover > ul {
+.header-top-left > ul > li:hover > ul {
 	display: block;
 	background: white;
 	border: 1px solid #0080c6;
@@ -147,6 +148,8 @@ img {
 
 .NYC-list li {
 	margin-bottom: 20px;
+	margin-right: 12px;
+	float: left;
 }
 
 .NYC-list li:hover {
@@ -155,11 +158,9 @@ img {
 	text-decoration: underline;
 }
 
-
 .SignIn-Comp {
 	display:block;
 	float: right;
-	/*border: 1px solid green;*/
 	margin-top: 7px;
 }
 
@@ -184,11 +185,18 @@ img {
 	text-decoration: underline;
 }
 
-.SignIn-Comp li:first-child:hover ul {
+.SignIn-Comp li:nth-child(2):hover ul {
 	display: block;
 }
 
 .SignIn-Comp > li:first-child {
+	font-size: 12px;
+	padding: 5px;
+	letter-spacing: 1px;
+	margin-right: 5px;
+}
+
+.SignIn-Comp > li:nth-child(2) {
 	font-size: 12px;
 	padding: 5px;
 	letter-spacing: 1px;
@@ -309,7 +317,8 @@ img {
 .property-listing {
 	float: left;
 	padding-top: 16px;
-	width: 330px;
+	width: 200px;
+
 }
 
 .property-listing:last-child {
@@ -319,6 +328,25 @@ img {
 .property-address {
 	font-size: 16px;
 	color: #0080c6;
+}
+
+.bookmark-button {
+	font-size: 16px;
+	font-weight: 700;
+	border: 1px solid #fdc435;
+	padding: 5px;
+	margin-top: 10px;
+	margin-left: 42px;
+}
+
+.bookmark-button-saved {
+	font-size: 16px;
+	font-weight: 700;
+	background-color: #fdc435;
+	border: 1px solid black;
+	padding: 5px 20px 5px 20px;
+	margin-top: 10px;
+	margin-left: 42px;
 }
 
 .map {

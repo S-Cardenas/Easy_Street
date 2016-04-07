@@ -6,8 +6,11 @@ var IndexRoute = require('react-router').IndexRoute;
 var hashHistory = require('react-router').hashHistory;
 var App = require('./components/app.jsx');
 var Properties = require('./components/properties.jsx');
+var ManhattanProperties = require('./components/manhattan_properties.jsx');
+var BrooklynProperties = require('./components/brooklyn_properties.jsx');
 var Property = require('./components/property.jsx');
 var AddProperty = require('./components/add_property.jsx');
+var Bookmarks = require('./components/bookmarks.jsx');
 
 var SessionStore = require('./stores/session_store.js');
 var ApiUtil = require('./util/api_util.js');
@@ -17,7 +20,10 @@ var routes = (
     <Route path="/" component={App} onEnter={ApiUtil.fetchCurrentUser}>
       <Route path="properties" component={Properties} />
       <Route path="properties/:id" component={Property} />
+			<Route path="manhattan" component={ManhattanProperties} />
+			<Route path="brooklyn" component={BrooklynProperties} />
 			<Route path="addproperty" component={AddProperty} />
+			<Route path="bookmarks" component={Bookmarks} />
     </Route>
   </Router>
 );

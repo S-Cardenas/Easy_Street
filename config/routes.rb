@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 		resource :session, only: [:show, :create, :destroy]
 		resources :users, only: [:new, :create]
 		resources :bookmarks, only: [:index, :create, :show, :destroy]
+		resources :manhattan, only: [:index]
+		resources :brooklyn, only: [:index]
   end
 end

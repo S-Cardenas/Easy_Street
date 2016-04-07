@@ -1,6 +1,7 @@
 var ApiDispatcher = require('../dispatcher/dispatcher.js');
 var PropertyConstants = require('../constants/property_constants.js');
 var ImageConstants = require('../constants/image_constants.js');
+var BookmarkConstants = require('../constants/bookmark_constants.js');
 
 var ApiActions = {
   receiveAllProperties: function(properties) {
@@ -28,6 +29,13 @@ var ApiActions = {
 		ApiDispatcher.dispatch({
 			actionType: ImageConstants.FOCUSED_IMAGE,
 			image: image
+		});
+	},
+
+	receiveBookmarks: function(bookmarks) {
+		ApiDispatcher.dispatch({
+			actionType: BookmarkConstants.BOOKMARKS_RECEIVED,
+			bookmarks: bookmarks
 		});
 	}
 };

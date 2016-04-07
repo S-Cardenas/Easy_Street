@@ -26,6 +26,9 @@ var SignInComp = React.createClass({
 		_loggedIn: function() {
 			return(
 								<ul className="SignIn-Comp">
+									<li>
+										<Link to={'/addproperty'}>Add Your Property</Link>
+									</li>
 									<li>Account Info
 										<ul className="account-info">
 											<li>
@@ -37,7 +40,7 @@ var SignInComp = React.createClass({
 										</ul>
 									</li>
 									<li>
-										<a href="#">My Bookmarks</a>
+										<Link to={'/bookmarks'}>My Bookmarks</Link>
 									</li>
 								</ul>
 						);
@@ -88,15 +91,20 @@ var TopNavBar = React.createClass({
 			<div>
 				<nav className="header-nav-top group">
 					<h3 className="header-top-left">
-						<a href="#">New York City
-							<ul className="NYC-list">
-								<li>New York City</li>
-								<li>Northern New Jersey</li>
-								<li>Hamptons</li>
-							</ul>
-						</a>
+						<ul>
+							<li>New York City
+								<ul className="NYC-list">
+									<li><Link to={'/manhattan'}>Manhattan</Link></li>
+									<li><Link to={'/brooklyn'}>Brooklyn</Link></li>
+									<li>Queens</li>
+									<li>Staten Island</li>
+									<li>Bronx</li>
+								</ul>
+							</li>
 
-						<a href="#">Blog</a>
+							<li href="#">Blog</li>
+						</ul>
+
 					</h3>
 
 					<SignInComp />
