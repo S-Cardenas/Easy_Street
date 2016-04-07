@@ -71,6 +71,18 @@ var ApiUtil = {
 		});
 	},
 
+	removeBookmark: function(bookmark, bookmarkId) {
+		$.ajax({
+			type: 'DELETE',
+			url: '/api/bookmarks/' + bookmarkId,
+			dataType: 'JSON',
+			data: bookmark,
+			success: function(bookmarks) {
+				ApiActions.receiveBookmarks(bookmarks);
+			}
+		});
+	},
+
 	login: function(credentials) {
 		$.ajax({
 			type: "POST",

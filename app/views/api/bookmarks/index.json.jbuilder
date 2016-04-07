@@ -1,4 +1,5 @@
 json.array! @bookmarks do |bookmark|
+	json.bookmarkId bookmark.id
 	json.address bookmark.property.address
 	json.id bookmark.property.id
 	json.author_id bookmark.property.author.username

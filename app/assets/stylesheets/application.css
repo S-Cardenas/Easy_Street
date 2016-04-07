@@ -43,7 +43,13 @@ body {
   font-size: 12px;
   line-height: 1.1666666666;
   color: #000;
-	/*z-index: 1000;*/
+}
+
+footer {
+	background-color: black;
+	width: 100%;
+	height: 300px;
+	opacity: 0.5;
 }
 
 .background {
@@ -81,14 +87,12 @@ img {
 .header-border {
   margin: 0 auto;
   width: 900px;
-  /*height: 200px;*/
   padding: 10px 0;
   position: relative;
 }
 
 .header-img {
   height: 60px;
-  /*display: block;*/
 }
 
 .header-icon {
@@ -381,6 +385,13 @@ img {
 	margin-bottom: 15px;
 }
 
+.images-item-main img {
+	width: 450px;
+	height: 305px;
+	margin: 0 auto;
+}
+
+
 .images-list {
 	width: 450px;
 	height: 100px;
@@ -490,7 +501,6 @@ img {
 	width: 350px;
 	height: 400px;
 	margin-top: 150px;
-	/*margin-right: 1000px;*/
 	z-index: 1000;
 	border: 5px solid white;
 }
@@ -577,7 +587,6 @@ img {
 	width: 350px;
 	height: 400px;
 	margin-top: 150px;
-	/*margin-right: 1000px;*/
 	z-index: 1000;
 	border: 5px solid white;
 }

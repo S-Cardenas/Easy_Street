@@ -40,7 +40,6 @@ var PropertyIndex = React.createClass({
 			return (property.id);
 		});
 		return arr;
-
 	},
 
   _focusProperty: function(property) {
@@ -51,8 +50,15 @@ var PropertyIndex = React.createClass({
 		ApiUtil.addBookmark(property);
 	},
 
-	_test: function() {
-		return ('randomness');
+	_removeBookmark: function(property) {
+		var bookmarkId = null;
+		for (var i = 0; i < this.state.bookmarks.length; i++) {
+			if (this.state.bookmarks[i].id === property.id) {
+				bookmarkId = this.state.bookmarks[i].bookmarkId;
+			}
+		}
+		var bookmark = { property_id: property.id, author_id: SessionStore.currentUser().id};
+		ApiUtil.removeBookmark(bookmark, bookmarkId);
 	},
 
   render: function() {
