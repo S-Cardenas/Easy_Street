@@ -61,6 +61,12 @@ end
 def d6
 	return "Unit 1C is a park-facing 2-bed, 2-bath duplex boasting 1,315 SF at the Aqua Condominium. Deeded PARKING is INCLUDED. The living area is open and bright with warm oak floors, the kitchen features Sub-Zero and Viking appliances, custom cabinetry and black granite counters. An architecturally distinct staircase leads downstairs to the master suite, which offers ample storage, home office space, laundry room, two large closets (including a walk-in), and a marble-accented full bathroom. The Aqua is a modern 55-unit building where residents enjoy a part-time doorman, playroom, bike storage, and a beautiful common deck designed for hosting the ultimate BBQ grilling parties. The building has a 421-A tax abatement until 2024. Just outside your door is Williamsburg's 35-acre McCarren Park featuring summer swimming/winter skating, tennis courts, baseball diamonds, a soccer field, a running track with body-weight fitness array, two dog runs and a farmer's market every weekend in season. All of this just a short distance to the L/G train at Lorimer and Bedford and surrounded by the best coffee shops, cafes, restaurants and boutiques in Williamsburg. Please note apartment is listed as a one bedroom plus rec room."
 end
+def d7
+	return "Unique hi-floor corner duplex one bedroom, 1.5 bath condo with expansive private terrace. Sophisticated architectural simplicity awaits you with over-sized windows, caramelized bamboo hard-word floors, central A/C and soaring beamed ceilings throughout. Step from your living room out to your own 345 sqft wrap-around terrace with dramatic city views; perfect for entertaining or for quiet relaxation. The open kitchen features stone counter tops, stainless appliances and dark wood cabinetry. The upper level bedroom has sunny north and eastern exposures, an ample walk-in closet, en-suite bath and separate building entrance for quick access to the buildings two common roof terraces. Two elegantly tiled bathrooms are equipped with Kohler fixtures, and the master bath features a large walk-in shower with European glass door. In-unit laundry room with Asko washer and dryer. J-51 tax abatement in force until 2024. BellTel residents enjoy a full time doorman, concierge, fitness center, yoga room, on-site parking, media room, two roof decks, playroom and for-fee self-storage and bike room. Conveniently located near the R, A, C, F/G, 2, 3, 4/5, B and Q trains, a commute into Manhattan is only a few minutes away. BellTel Lofts is located in the epicenter of Downtown Brooklyn; one of the most amenity rich neighborhoods in New York City."
+end
+def d8
+	return "Above It All - The Penthouse Plus Standing hundreds of feet above New York City with panoramic vistas isn't all you'll look forward to in this magnificent penthouse suite. Originally two separate units, PH45A is now a 1,750 square foot combination apartment, boasting a lofty 3 bedroom, 3-bathroom layout with twice the room and twice the amenities. Inside this one-of-a-kind condo apartment, owners will bask in the warmth of a sun filled space, featuring eleven foot ceilings, floor to ceiling windows, and wide-plank oak floors, all adorned with designer hardware and fixtures for a clean, sleek and modern aesthetic. Guests will stand in amazement at an awe inspiring kitchen featuring top-of-the-line appliances, white quartz countertops and backsplash, custom fixtureswarm grey walnut and white lacquer cabinetry. Accompanying lavish eating and living areas, are 3 modern baths featuring walls and countertops of glistening white quartz, Lagos Azul limestone floors and showers, a full-height backsplash; custom designed, rear-draining white quartz sink; a white lacquer vanity; and a master bathroom with walk-in shower with accessory/ shower niches and a state-of-the art thermostatic shower system. If the sheer brilliance of an elevated home were not enough, 388 Bridge Street also offers a fully-attended lobby, sky lounge, rooftop viewing terrace, Lounge /Party Room, Gym, Media Room, and 5th Floor Outdoor Terrace with barbeque grilling deck and separate kids play area. Located in the crux of downtown Brooklyn near the boarders of Boerum Hill, Cobble Hill, Fort Greene, and Dumbo and in close proximity to 2, 3, and 4, 5, A, B, C, D, F, G, N, Q, and R trains, 388 Bridge Street Apartment PH45A gives a world class view of all the luxurious commodities and endless array of culture New York City has to offer. This is an opportunity you wont want to miss! Call David Fernandez today for more details. "
+end
 
 Property.destroy_all
 p1 = Property.create!(address:"310 West 18th Street #3A", author_id: u1.id, description: d1, area: 1200, price: 3000, num_rooms: 2.5, num_bathroom: 1, borough_id: b1.id, availability: true, lat: 40.739013, lng: -73.991950)
@@ -69,8 +75,8 @@ p3 = Property.create!(address:"318 Grand Street #2J", author_id: u2.id, descript
 p4 = Property.create!(address:"465 Park Avenue #404", author_id: u2.id, description: d4, area: 2100, price: 4000, num_rooms: 2, num_bathroom: 2, borough_id: b1.id, availability: true, lat: 40.761815, lng: -73.970186)
 p5 = Property.create!(address:"135 North 11th Street #5G", author_id: u2.id, description: d5, area: 918, price: 3400, num_rooms: 2, num_bathroom: 2 , borough_id: b2.id, availability: true, lat: 40.720823, lng: -73.955977)
 p6 = Property.create!(address:"141 Devoe Street #Bldg", author_id: u1.id, description:d6, area: 3500, price: 3000, num_rooms: 10, num_bathroom: 4, borough_id: b2.id, availability: true, lat: 40.714071, lng: -73.945070)
-# p7 = Property.create!(address:, author_id:, description:, area:, price:, num_rooms:, num_bathroom:, borough_id: , availability: true)
-# p8 = Property.create!(address:, author_id:, description:, area:, price:, num_rooms:, num_bathroom:, borough_id: , availability: true)
+p7 = Property.create!(address:"365 Bridge Street #18H", author_id: u2.id, description:d7, area:5000, price: 5000, num_rooms:3, num_bathroom: 1, borough_id: b2.id, availability: true, lat: 40.692660, lng: -73.984976)
+p8 = Property.create!(address:"388 Bridge Street #Ph45ab", author_id: u1.id, description:d8, area:1731, price: 5000, num_rooms:5, num_bathroom:2, borough_id: b2.id, availability: true, lat:40.691629, lng:-73.985259)
 # p9 = Property.create!(address:, author_id:, description:, area:, price:, num_rooms:, num_bathroom:, borough_id: , availability: true)
 #
 #
@@ -150,6 +156,32 @@ pic20.save!
 pic21 = Picture.create!(title: "", imageable_id: p6.id, imageable_type: "Property")
 pic21.image = File.open('app/assets/images/141D/141D3.jpg')
 pic21.save!
+
+pic22 = Picture.create!(title: "", imageable_id: p7.id, imageable_type: "Property")
+pic22.image = File.open('app/assets/images/365B/365B1.jpg')
+pic22.save!
+
+pic23 = Picture.create!(title: "", imageable_id: p7.id, imageable_type: "Property")
+pic23.image = File.open('app/assets/images/365B/365B2.jpg')
+pic23.save!
+
+pic24 = Picture.create!(title: "", imageable_id: p7.id, imageable_type: "Property")
+pic24.image = File.open('app/assets/images/365B/365B3.jpg')
+pic24.save!
+
+pic25 = Picture.create!(title: "", imageable_id: p8.id, imageable_type: "Property")
+pic25.image = File.open('app/assets/images/388B/388B1.jpg')
+pic25.save!
+
+pic26 = Picture.create!(title: "", imageable_id: p8.id, imageable_type: "Property")
+pic26.image = File.open('app/assets/images/388B/388B2.jpg')
+pic26.save!
+
+pic27 = Picture.create!(title: "", imageable_id: p8.id, imageable_type: "Property")
+pic27.image = File.open('app/assets/images/388B/388B3.jpg')
+pic27.save!
+
+
 
 
 Bookmark.destroy_all
