@@ -1,5 +1,6 @@
 var React = require('react');
 var ApiUtil = require('../util/api_util');
+var SessionStore = require('../stores/session_store.js');
 
 var LoginForm = React.createClass({
 
@@ -9,7 +10,11 @@ var LoginForm = React.createClass({
 
 	handleSubmit: function(e) {
 		e.preventDefault();
-		ApiUtil.login(this.state);
+		ApiUtil.login(this.state, function() {
+			if (SessionStore.currentUser()) {
+				ApiUtil.fetchBookmarks();
+			}
+		});
 		// Use router.replace('/properties') for the time being
 	},
 

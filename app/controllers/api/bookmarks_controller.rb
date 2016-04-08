@@ -14,7 +14,9 @@ class Api::BookmarksController < ApplicationController
 
 		@bookmark.save
 
-		render json: Bookmark.where('author_id = ?', current_user.id )
+		@bookmarks = Bookmark.where('author_id = ?', current_user.id )
+
+		render json: @bookmarks
 
 	end
 

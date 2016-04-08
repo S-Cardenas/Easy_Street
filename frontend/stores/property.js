@@ -15,6 +15,7 @@ var reset_focusedProperty = function(property) {
 };
 
 PropertyStore.all = function() {
+
   return _properties.slice(0);
 };
 

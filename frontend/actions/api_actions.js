@@ -11,7 +11,7 @@ var ApiActions = {
     });
   },
 
-	reiveProperty: function(property) {
+	receiveProperty: function(property) {
 		ApiDispatcher.dispatch({
 			actionType: PropertyConstants.PROPERTY_RECEIVED,
 			property: property

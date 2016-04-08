@@ -30,16 +30,17 @@ var PropertyIndex = React.createClass({
     this.setState({ properties: PropertyStore.all() });
   },
 
-	_onChangeBookmark: function() {
-		this.setState({ bookmarks: BookmarkStore.all()});
-		this._bookmarkArray();
+	_bookmarkArray: function() {
+		var arr = BookmarkStore.all().map(function(bookmark) {
+			return (bookmark.property_id);
+		});
+
+		return arr;
 	},
 
-	_bookmarkArray: function() {
-		var arr = this.state.bookmarks.map(function(property) {
-			return (property.id);
-		});
-		return arr;
+	_onChangeBookmark: function() {
+		this._bookmarkArray();
+		this.setState({ bookmarks: BookmarkStore.all()});
 	},
 
   _focusProperty: function(property) {

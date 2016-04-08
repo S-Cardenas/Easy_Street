@@ -34,7 +34,7 @@ var ApiUtil = {
     });
   },
 
-	createProperty: function(formData) {
+	createProperty: function(formData, callback) {
 		$.ajax({
 			type: 'POST',
 			url: '/api/properties',
@@ -43,7 +43,8 @@ var ApiUtil = {
 			dataType: 'JSON',
 			data: formData,
 			success: function(property) {
-				ApiActions.receiveProperty(property);
+				ApiActions.receiveProperty([property]);
+				callback(property);
 			}
 		});
 	},
@@ -83,7 +84,7 @@ var ApiUtil = {
 		});
 	},
 
-	login: function(credentials) {
+	login: function(credentials, callback) {
 		$.ajax({
 			type: "POST",
 			url: "/api/session",
@@ -91,6 +92,9 @@ var ApiUtil = {
 			data: { user: credentials },
 			success: function(currentUser) {
 				SessionActions.currentUserReceived(currentUser);
+				if (callback) {
+					callback();
+				}
 			}
 		});
 	},

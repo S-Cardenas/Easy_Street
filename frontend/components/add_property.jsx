@@ -1,8 +1,11 @@
 var React = require('react');
 var ApiUtil = require('../util/api_util');
 var SessionStore = require('../stores/session_store.js');
+var History = require('react-router').History;
 
 var AddProperty = React.createClass({
+
+	mixins: [ History ],
 
 	getInitialState: function() {
 		return {address: "", description: "", area: "", price: "",
@@ -58,7 +61,9 @@ var AddProperty = React.createClass({
 					formData.append("property[images][" + j + "]", this.state.imageFiles[j]);
 				}
 
-				ApiUtil.createProperty(formData);
+				ApiUtil.createProperty(formData, function(property) {
+					this.history.pushState(null, "properties/" + property.id);
+				}.bind(this));
 			}
 			else {
 				console.log('didnt find the address');
