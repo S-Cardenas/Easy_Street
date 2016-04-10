@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 		resources :bookmarks, only: [:index, :create, :show, :destroy]
 		resources :manhattan, only: [:index]
 		resources :brooklyn, only: [:index]
+    resources :search, only: [:index]
   end
 end

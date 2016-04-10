@@ -49,6 +49,21 @@ var ApiUtil = {
 		});
 	},
 
+  searchProperties: function(query, callback) {
+    $.ajax({
+      type: 'GET',
+      url: '/api/search',
+      dataType: 'JSON',
+      data: query,
+      success: function(properties) {
+        ApiActions.receiveSearchProperties(properties);
+        if (callback) {
+          callback();
+        }
+      }
+    });
+  },
+
 	fetchBookmarks: function() {
 		$.ajax({
 			type: 'GET',

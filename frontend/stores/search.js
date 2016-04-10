@@ -1,6 +1,6 @@
 var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
-var PropertyStore = new Store(AppDispatcher);
+var SearchStore = new Store(AppDispatcher);
 var PropertyConstants = require('../constants/property_constants');
 
 var _properties = [];
@@ -14,38 +14,29 @@ var reset_focusedProperty = function(property) {
   _focusedProperty = property;
 };
 
-PropertyStore.all = function() {
-
+SearchStore.all = function() {
   return _properties.slice(0);
 };
 
-PropertyStore.focusedProperty = function() {
+SearchStore.focusedProperty = function() {
   return _focusedProperty;
 };
 
-PropertyStore.resetProperties = function() {
-  _properties = [];
-};
-
-PropertyStore.resetFocusedProperty = function() {
+SearchStore.resetFocusedProperty = function() {
 	_focusedProperty = null;
 };
 
-PropertyStore.__onDispatch = function(payload) {
+SearchStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
-    case PropertyConstants.PROPERTIES_RECEIVED:
+    case PropertyConstants.SEARCH_RECEIVED:
       reset_properties(payload.properties);
-      PropertyStore.__emitChange();
+      SearchStore.__emitChange();
       break;
     case PropertyConstants.FOCUSED_PROPERTY:
       reset_focusedProperty(payload.property);
-      PropertyStore.__emitChange();
+      SearchStore.__emitChange();
       break;
-		case PropertyConstants.PROPERTY_RECEIVED:
-			reset_properties(payload.property);
-			PropertyStore.__emitChange();
-			break;
   }
 };
 
-module.exports = PropertyStore;
+module.exports = SearchStore;

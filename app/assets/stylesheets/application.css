@@ -658,3 +658,10 @@ img {
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
+
+.search-property-div {
+	width: 1000px;
+	margin: 0 auto;
+	background-color: white;
+	padding: 10px;
+}

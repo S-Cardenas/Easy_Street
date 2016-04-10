@@ -1,26 +1,24 @@
 var React = require('react');
-var PropertyStore = require('../stores/property.js');
+var SearchStore = require('../stores/search.js');
 var BookmarkStore = require('../stores/bookmark_store.js');
 var SessionStore = require('../stores/session_store.js');
 var ApiUtil = require('../util/api_util.js');
 var ApiActions = require('../actions/api_actions.js');
 var Link = require('react-router').Link;
 
-var PropertyIndex = React.createClass({
+var SearchIndex = React.createClass({
   getInitialState: function() {
-    return { properties: PropertyStore.all(), bookmarks: BookmarkStore.all() };
+    return { properties: SearchStore.all(), bookmarks: BookmarkStore.all() };
   },
 
   componentDidMount: function() {
-    this.propertyListener = PropertyStore.addListener(this._onChange);
+    this.propertyListener = SearchStore.addListener(this._onChange);
 		this.bookmarkListener = BookmarkStore.addListener(this._onChangeBookmark);
-
-    ApiUtil.fetchProperties(this.props.apiCall, function() {
-			if (SessionStore.currentUser()) {
-				ApiUtil.fetchBookmarks();
-			}
-		});
-
+    ApiUtil.searchProperties(this.props.query, function() {
+  		if (SessionStore.currentUser()) {
+  			ApiUtil.fetchBookmarks();
+  		}
+    });
   },
 
   componentWillUnmount: function() {
@@ -29,7 +27,7 @@ var PropertyIndex = React.createClass({
   },
 
   _onChange: function() {
-    this.setState({ properties: PropertyStore.all() });
+    this.setState({ properties: SearchStore.all() });
   },
 
 	_bookmarkArray: function() {
@@ -116,4 +114,4 @@ var PropertyIndex = React.createClass({
   }
 });
 
-module.exports = PropertyIndex;
+module.exports = SearchIndex;

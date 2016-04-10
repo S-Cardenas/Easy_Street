@@ -11,6 +11,13 @@ var ApiActions = {
     });
   },
 
+  receiveSearchProperties: function(properties) {
+    ApiDispatcher.dispatch({
+      actionType: PropertyConstants.SEARCH_RECEIVED,
+      properties: properties
+    });
+  },
+
 	receiveProperty: function(property) {
 		ApiDispatcher.dispatch({
 			actionType: PropertyConstants.PROPERTY_RECEIVED,

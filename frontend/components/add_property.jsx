@@ -5,7 +5,9 @@ var History = require('react-router').History;
 
 var AddProperty = React.createClass({
 
-	mixins: [ History ],
+	contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
 
 	getInitialState: function() {
 		return {address: "", description: "", area: "", price: "",
@@ -62,7 +64,7 @@ var AddProperty = React.createClass({
 				}
 
 				ApiUtil.createProperty(formData, function(property) {
-					this.history.pushState(null, "properties/" + property.id);
+					this.context.router.push(null, "properties/" + property.id);
 				}.bind(this));
 			}
 			else {

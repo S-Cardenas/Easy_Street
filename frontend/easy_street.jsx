@@ -11,6 +11,8 @@ var BrooklynProperties = require('./components/brooklyn_properties.jsx');
 var Property = require('./components/property.jsx');
 var AddProperty = require('./components/add_property.jsx');
 var Bookmarks = require('./components/bookmarks.jsx');
+var SearchForm = require('./components/search_form.jsx');
+var SearchResults = require('./components/searched_properties.jsx');
 
 var SessionStore = require('./stores/session_store.js');
 var ApiUtil = require('./util/api_util.js');
@@ -18,12 +20,14 @@ var ApiUtil = require('./util/api_util.js');
 var routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App} onEnter={ApiUtil.fetchCurrentUser}>
+      <IndexRoute component={SearchForm}/>
       <Route path="properties" component={Properties} />
       <Route path="properties/:id" component={Property} />
 			<Route path="manhattan" component={ManhattanProperties} />
 			<Route path="brooklyn" component={BrooklynProperties} />
 			<Route path="addproperty" component={AddProperty} />
 			<Route path="bookmarks" component={Bookmarks} />
+      <Route path="search" component={SearchResults} />
     </Route>
   </Router>
 );

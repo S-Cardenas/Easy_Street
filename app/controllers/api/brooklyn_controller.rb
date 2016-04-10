@@ -1,7 +1,8 @@
 class Api::BrooklynController < ApplicationController
 
 	def index
-		@properties = Property.where('borough_id = ?', 2)
+    brooklyn = Borough.find_by(name: "Brooklyn")
+		@properties = Property.where('borough_id = ?', brooklyn.id)
 		render :index
 	end
 
