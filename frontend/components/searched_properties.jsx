@@ -28,7 +28,7 @@ var SearchedProperties = React.createClass({
   render: function() {
     return(
       <div className="properties-page group">
-        <SearchIndex apiCall={'properties'} query={this.props.query}/>
+        <SearchIndex apiCall={'properties'} query={this.props.location.query}/>
         <Map focusedProperty={this.state.focusedProperty} />
         {this.props.children}
       </div>

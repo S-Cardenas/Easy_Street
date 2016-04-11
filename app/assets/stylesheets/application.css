@@ -665,3 +665,34 @@ img {
 	background-color: white;
 	padding: 10px;
 }
+
+.search-property-div h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.search-property-div p {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.search-property-div label {
+  font-size: 16px;
+}
+
+.dropdown-select {
+  /*border: 1px solid red;*/
+  padding: 10px;
+  margin: 10px;
+}
+
+.search-button {
+  background-color: #0080c6;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px;
+  /*border: 1px solid red;*/
+}

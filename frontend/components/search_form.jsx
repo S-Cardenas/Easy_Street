@@ -10,8 +10,8 @@ var SearchForm = React.createClass({
   },
 
   getInitialState: function() {
-    return {neighborhood: "", areaLow: "", areaHigh: "", priceLow: "", priceHigh: "",
-			 num_rooms: "", num_bathroom: ""
+    return {neighborhood: "any", areaLow: "any", areaHigh: "any", priceLow: "any", priceHigh: "any",
+			 num_rooms: "any", num_bathroom: "any"
 		};
   },
 
@@ -74,6 +74,7 @@ var SearchForm = React.createClass({
           <label htmlFor="address">Neighborhood</label>
           <br/>
           <select className="dropdown-select" onChange={this.updateNeighborhood}>
+            <option value="any">Any</option>
             <option value="Manhattan">Manhattan</option>
             <option value="Brooklyn">Brooklyn</option>
             <option value="Queens">Queens</option>
@@ -85,6 +86,7 @@ var SearchForm = React.createClass({
           <label htmlFor="areaLow">Area Minimum</label>
           <br/>
           <select className="dropdown-select" onChange={this.updateAreaLow}>
+            <option value="any">Any</option>
             <option value="500">500 ft²</option>
             <option value="1000">1000 ft²</option>
             <option value="1500">1500 ft²</option>
@@ -106,6 +108,7 @@ var SearchForm = React.createClass({
           <label htmlFor="areaHigh">Area Maximum</label>
           <br/>
           <select className="dropdown-select" onChange={this.updateAreaHigh}>
+            <option value="any">Any</option>
             <option value="500">500 ft²</option>
             <option value="1000">1000 ft²</option>
             <option value="1500">1500 ft²</option>
@@ -127,6 +130,7 @@ var SearchForm = React.createClass({
           <label htmlFor="priceLow">Price Low</label>
           <br/>
           <select className="dropdown-select" onChange={this.updatePriceLow}>
+            <option value="any">Any</option>
             <option value="500">$500</option>
             <option value="1000">$1000</option>
             <option value="1500">$1500</option>
@@ -148,6 +152,7 @@ var SearchForm = React.createClass({
           <label htmlFor="priceHigh">Price High</label>
           <br/>
           <select className="dropdown-select" onChange={this.updatePriceHigh}>
+            <option value="any">Any</option>
             <option value="500">$500</option>
             <option value="1000">$1000</option>
             <option value="1500">$1500</option>
@@ -169,6 +174,7 @@ var SearchForm = React.createClass({
           <label htmlFor="numRooms">Number of Rooms</label>
           <br/>
           <select className="dropdown-select" onChange={this.updateNumRooms}>
+            <option value="any">Any</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -182,6 +188,7 @@ var SearchForm = React.createClass({
           <label htmlFor="numBaths">Number of Bathrooms</label>
           <br/>
           <select className="dropdown-select" onChange={this.updateNumBaths}>
+            <option value="any">Any</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -193,7 +200,7 @@ var SearchForm = React.createClass({
 
           <br/>
 
-          <button type='submit'>Submit</button>
+          <button type='submit' className="search-button">Submit</button>
 
         </form>
 
