@@ -146,9 +146,9 @@ var ApiUtil = {
       success: function(currentUser) {
         SessionActions.currentUserReceived(currentUser);
       },
-      // complete: function() {
-      //   completion && completion();
-      // }
+      error: function(message) {
+        console.log(message);
+      }
     });
   }
 };

@@ -181,9 +181,6 @@ pic27 = Picture.create!(title: "", imageable_id: p8.id, imageable_type: "Propert
 pic27.image = File.open('app/assets/images/388B/388B3.jpg')
 pic27.save!
 
-
-
-
 Bookmark.destroy_all
 bk1 = Bookmark.create!(property_id: p3.id, author_id: u1.id)
 bk2 = Bookmark.create!(property_id: p4.id, author_id: u1.id)
