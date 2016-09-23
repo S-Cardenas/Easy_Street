@@ -275,7 +275,6 @@ img {
 	float: right;
 }
 
-
 .properties-page {
 	width: 1018px;
 	margin: 0 auto;
@@ -283,6 +282,19 @@ img {
 	border: 1px solid white;
 }
 
+.content-left {
+  min-height: 300px;
+  width: 560px;
+  float: left;
+  /*margin: 0 auto;*/
+}
+
+.content-right {
+  min-height: 300px;
+  width: 450px;
+  float: right;
+  /*margin: 0 auto;*/
+}
 
 .property-index {
 	width: 500px;

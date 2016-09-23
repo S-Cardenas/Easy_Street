@@ -145,9 +145,6 @@ var ApiUtil = {
       dataType: "JSON",
       success: function(currentUser) {
         SessionActions.currentUserReceived(currentUser);
-      },
-      error: function(message) {
-        console.log(message);
       }
     });
   }
