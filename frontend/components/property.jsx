@@ -43,11 +43,11 @@ var Property = React.createClass({
     else {
       return (
         <div className="property-show-page group">
+          <div className="pi-map">
+            <PropertyInfo focusedProperty={this.state.focusedProperty}/>
+            <Map focusedProperty={this.state.focusedProperty}/>
+          </div>
 					<ImgShow focusedProperty={this.state.focusedProperty} />
-					<div className="pi-map">
-						<PropertyInfo focusedProperty={this.state.focusedProperty}/>
-						<Map focusedProperty={this.state.focusedProperty}/>
-					</div>
 					<Description focusedProperty={this.state.focusedProperty}/>
         </div>
       );
