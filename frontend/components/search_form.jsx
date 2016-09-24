@@ -66,141 +66,148 @@ var SearchForm = React.createClass({
   render: function() {
     return (
       <section className="search-property-div">
+
         <h1>New York City Real Estate</h1>
-        <p>Fill in each detail below and then hit submit.</p>
 
-        <form onSubmit={this.handleSubmit} className="search-property-form">
+        <form onSubmit={this.handleSubmit} className="search-property-form group">
 
-          <label htmlFor="address">Neighborhood</label>
-          <br/>
-          <select className="dropdown-select" onChange={this.updateNeighborhood}>
-            <option value="any">Any</option>
-            <option value="Manhattan">Manhattan</option>
-            <option value="Brooklyn">Brooklyn</option>
-            <option value="Queens">Queens</option>
-            <option value="Bronx">Bronx</option>
-            <option value="Staten Island">Staten Island</option>
-          </select>
+          <div className="search-property-choice">
+            <label htmlFor="address">Neighborhood</label>
+            <br/>
+            <select className="dropdown-select-neighborhood" onChange={this.updateNeighborhood}>
+              <option selected disabled>Address / Neighborhood / Building / Keyword</option>
+              <option value="any">Any</option>
+              <option value="Manhattan">Manhattan</option>
+              <option value="Brooklyn">Brooklyn</option>
+              <option value="Queens">Queens</option>
+              <option value="Bronx">Bronx</option>
+              <option value="Staten Island">Staten Island</option>
+            </select>
+          </div>
 
-          <br/>
-          <label htmlFor="areaLow">Area Minimum</label>
-          <br/>
-          <select className="dropdown-select" onChange={this.updateAreaLow}>
-            <option value="any">Any</option>
-            <option value="500">500 ft²</option>
-            <option value="1000">1000 ft²</option>
-            <option value="1500">1500 ft²</option>
-            <option value="2000">2000 ft²</option>
-            <option value="2500">2500 ft²</option>
-            <option value="3000">3000 ft²</option>
-            <option value="3500">3500 ft²</option>
-            <option value="4000">4000 ft²</option>
-            <option value="4500">4500 ft²</option>
-            <option value="5000">5000 ft²</option>
-            <option value="5500">5500 ft²</option>
-            <option value="6000">6000 ft²</option>
-            <option value="6500">6500 ft²</option>
-            <option value="7000">7000 ft²</option>
-            <option value="7500">7500 ft²</option>
-          </select>
+          <div className="search-property-choice">
+            <label htmlFor="areaLow">Area Minimum</label>
+            <br/>
+            <select className="dropdown-select" onChange={this.updateAreaLow}>
+              <option value="any">Any</option>
+              <option value="500">500 ft²</option>
+              <option value="1000">1000 ft²</option>
+              <option value="1500">1500 ft²</option>
+              <option value="2000">2000 ft²</option>
+              <option value="2500">2500 ft²</option>
+              <option value="3000">3000 ft²</option>
+              <option value="3500">3500 ft²</option>
+              <option value="4000">4000 ft²</option>
+              <option value="4500">4500 ft²</option>
+              <option value="5000">5000 ft²</option>
+              <option value="5500">5500 ft²</option>
+              <option value="6000">6000 ft²</option>
+              <option value="6500">6500 ft²</option>
+              <option value="7000">7000 ft²</option>
+              <option value="7500">7500 ft²</option>
+            </select>
+          </div>
 
-          <br/>
-          <label htmlFor="areaHigh">Area Maximum</label>
-          <br/>
-          <select className="dropdown-select" onChange={this.updateAreaHigh}>
-            <option value="any">Any</option>
-            <option value="500">500 ft²</option>
-            <option value="1000">1000 ft²</option>
-            <option value="1500">1500 ft²</option>
-            <option value="2000">2000 ft²</option>
-            <option value="2500">2500 ft²</option>
-            <option value="3000">3000 ft²</option>
-            <option value="3500">3500 ft²</option>
-            <option value="4000">4000 ft²</option>
-            <option value="4500">4500 ft²</option>
-            <option value="5000">5000 ft²</option>
-            <option value="5500">5500 ft²</option>
-            <option value="6000">6000 ft²</option>
-            <option value="6500">6500 ft²</option>
-            <option value="7000">7000 ft²</option>
-            <option value="7500">7500 ft²</option>
-          </select>
+          <div className="search-property-choice">
+            <label htmlFor="areaHigh">Area Maximum</label>
+            <br/>
+            <select className="dropdown-select" onChange={this.updateAreaHigh}>
+              <option value="any">Any</option>
+              <option value="500">500 ft²</option>
+              <option value="1000">1000 ft²</option>
+              <option value="1500">1500 ft²</option>
+              <option value="2000">2000 ft²</option>
+              <option value="2500">2500 ft²</option>
+              <option value="3000">3000 ft²</option>
+              <option value="3500">3500 ft²</option>
+              <option value="4000">4000 ft²</option>
+              <option value="4500">4500 ft²</option>
+              <option value="5000">5000 ft²</option>
+              <option value="5500">5500 ft²</option>
+              <option value="6000">6000 ft²</option>
+              <option value="6500">6500 ft²</option>
+              <option value="7000">7000 ft²</option>
+              <option value="7500">7500 ft²</option>
+            </select>
+          </div>
 
-          <br/>
-          <label htmlFor="priceLow">Price Low</label>
-          <br/>
-          <select className="dropdown-select" onChange={this.updatePriceLow}>
-            <option value="any">Any</option>
-            <option value="500">$500</option>
-            <option value="1000">$1000</option>
-            <option value="1500">$1500</option>
-            <option value="2000">$2000</option>
-            <option value="2500">$2500</option>
-            <option value="3000">$3000</option>
-            <option value="3500">$3500</option>
-            <option value="4000">$4000</option>
-            <option value="4500">$4500</option>
-            <option value="5000">$5000</option>
-            <option value="5500">$5500</option>
-            <option value="6000">$6000</option>
-            <option value="6500">$6500</option>
-            <option value="7000">$7000</option>
-            <option value="7500">$7500</option>
-          </select>
+          <div className="search-property-choice">
+            <label htmlFor="priceLow">Price Low</label>
+            <br/>
+            <select className="dropdown-select" onChange={this.updatePriceLow}>
+              <option value="any">Any</option>
+              <option value="500">$500</option>
+              <option value="1000">$1000</option>
+              <option value="1500">$1500</option>
+              <option value="2000">$2000</option>
+              <option value="2500">$2500</option>
+              <option value="3000">$3000</option>
+              <option value="3500">$3500</option>
+              <option value="4000">$4000</option>
+              <option value="4500">$4500</option>
+              <option value="5000">$5000</option>
+              <option value="5500">$5500</option>
+              <option value="6000">$6000</option>
+              <option value="6500">$6500</option>
+              <option value="7000">$7000</option>
+              <option value="7500">$7500</option>
+            </select>
+          </div>
 
-          <br/>
-          <label htmlFor="priceHigh">Price High</label>
-          <br/>
-          <select className="dropdown-select" onChange={this.updatePriceHigh}>
-            <option value="any">Any</option>
-            <option value="500">$500</option>
-            <option value="1000">$1000</option>
-            <option value="1500">$1500</option>
-            <option value="2000">$2000</option>
-            <option value="2500">$2500</option>
-            <option value="3000">$3000</option>
-            <option value="3500">$3500</option>
-            <option value="4000">$4000</option>
-            <option value="4500">$4500</option>
-            <option value="5000">$5000</option>
-            <option value="5500">$5500</option>
-            <option value="6000">$6000</option>
-            <option value="6500">$6500</option>
-            <option value="7000">$7000</option>
-            <option value="7500">$7500</option>
-          </select>
+          <div className="search-property-choice">
+            <label htmlFor="priceHigh">Price High</label>
+            <br/>
+            <select className="dropdown-select" onChange={this.updatePriceHigh}>
+              <option value="any">Any</option>
+              <option value="500">$500</option>
+              <option value="1000">$1000</option>
+              <option value="1500">$1500</option>
+              <option value="2000">$2000</option>
+              <option value="2500">$2500</option>
+              <option value="3000">$3000</option>
+              <option value="3500">$3500</option>
+              <option value="4000">$4000</option>
+              <option value="4500">$4500</option>
+              <option value="5000">$5000</option>
+              <option value="5500">$5500</option>
+              <option value="6000">$6000</option>
+              <option value="6500">$6500</option>
+              <option value="7000">$7000</option>
+              <option value="7500">$7500</option>
+            </select>
+          </div>
 
-          <br/>
-          <label htmlFor="numRooms">Number of Rooms</label>
-          <br/>
-          <select className="dropdown-select" onChange={this.updateNumRooms}>
-            <option value="any">Any</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-          </select>
+          <div className="search-property-choice">
+            <label htmlFor="numRooms">Rooms</label>
+            <br/>
+            <select className="dropdown-select" onChange={this.updateNumRooms}>
+              <option value="any">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </div>
 
-          <br/>
-          <label htmlFor="numBaths">Number of Bathrooms</label>
-          <br/>
-          <select className="dropdown-select" onChange={this.updateNumBaths}>
-            <option value="any">Any</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-          </select>
+          <div className="search-property-choice">
+            <label htmlFor="numBaths">Bathrooms</label>
+            <br/>
+            <select className="dropdown-select" onChange={this.updateNumBaths}>
+              <option value="any">Any</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </div>
 
-          <br/>
-
-          <button type='submit' className="search-button">Submit</button>
+          <button type='submit' className="search-button">SEARCH</button>
 
         </form>
 
