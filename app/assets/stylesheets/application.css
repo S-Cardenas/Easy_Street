@@ -491,12 +491,23 @@ img {
 	line-height: 20px;
 }
 
-.model {
+.modal {
 	display: none;
 }
 
-.model-is-active {
-	position: absolute;
+.modal-screen {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.modal.is-open {
+  display: block;
+	/*position: absolute;
 	top: 0;
 	left: 300px;
 	display: block;
@@ -504,18 +515,24 @@ img {
 	width: 350px;
 	height: 400px;
 	margin-top: 150px;
-	z-index: 1000;
-	border: 5px solid white;
+	z-index: 50;
+	border: 5px solid white;*/
 }
 
-.model-is-active h1 {
+.modal-form {
+  position: absolute;
+  z-index: 3;
+  background: white;
+}
+
+.modal-form h1 {
 	display: block;
 	padding: 18px;
 	margin: 0 auto;
 	background-color: #0080c6;
 }
 
-.model-is-active > h1 > div {
+.modal-form > h1 > div {
 	margin: 0 auto;
 	width: 150px;
 	color: white;
@@ -523,7 +540,7 @@ img {
 	padding-left: 15px;
 }
 
-.model-is-active p {
+.modal-form p {
 	margin: 10px 30px;
 	font-size: 14px;
 }
@@ -564,14 +581,15 @@ img {
 	margin-top: 20px;
 }
 
-.model-screen {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 1072px;
-	z-index: -1;
-	background: rgba(0, 0, 0, 0.9);
+
+.model-screen-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .model-signup {

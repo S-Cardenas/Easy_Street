@@ -51,7 +51,7 @@ var SignInComp = React.createClass({
 							<div>
 								<ul className="SignIn-Comp">
 									<li>
-										<a href="#" onClick={this._modelToggleSignIn}>Sign In</a>
+										<a href="#" onClick={this._modalToggleSignIn}>Sign In</a>
 									</li>
 									<li>
 										<a href="#" onClick={this._modelToggleRegister}>Register (It's Free)</a>
@@ -62,9 +62,9 @@ var SignInComp = React.createClass({
 							</div>
 			);
 },
-		_modelToggleSignIn: function(e) {
+		_modalToggleSignIn: function(e) {
 			e.preventDefault();
-			$("#model").addClass("model-is-active");
+			$(".modal").addClass("is-open");
 		},
 
 		_modelToggleRegister: function(e) {
