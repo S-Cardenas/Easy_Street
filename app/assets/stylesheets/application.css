@@ -577,62 +577,12 @@ img {
 	margin-top: 20px;
 }
 
-
-.model-screen-active {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: rgba(0, 0, 0, 0.9);
+.modal-sign-up {
+  display: none;
 }
 
-.model-signup {
-	display: none;
-}
-
-.model-signup-is-active {
-	position: absolute;
-	top: 0;
-	left: 300px;
-	display: block;
-	background-color: white;
-	width: 350px;
-	height: 400px;
-	margin-top: 150px;
-	z-index: 1000;
-	border: 5px solid white;
-}
-
-.model-signup-is-active h1 {
-	display: block;
-	padding: 18px;
-	margin: 0 auto;
-	background-color: #0080c6;
-}
-
-.model-signup-is-active > h1 > div {
-	margin: 0 auto;
-	width: 150px;
-	color: white;
-	font-size: 20px;
-	padding-left: 15px;
-}
-
-.model-signup-is-active p {
-	margin: 10px 30px;
-	font-size: 14px;
-}
-
-.model-signup-screen {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 1072px;
-	z-index: -1;
-	background: rgba(0, 0, 0, 0.9);
+.modal-sign-up.is-open {
+  display: block;
 }
 
 .add-property-div {

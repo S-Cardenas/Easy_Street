@@ -21,43 +21,45 @@ var SignupForm = React.createClass({
 		this.setState({ password: e.currentTarget.value });
 	},
 
-	_modelToggle: function(e) {
+	_modalToggle: function(e) {
 		e.preventDefault();
-		$("#model-signup").removeClass("model-signup-is-active");
+		$(".modal-sign-up").removeClass("is-open");
 	},
 
 	render: function() {
 		return (
-			<section id="model-signup" className="model-signup">
-				<h1>
-					<div>Please Sign Up</div>
-				</h1>
-				<p>
-					Register for free to access all EasyStreets has to offer including premium data and advanced features.
-				</p>
 
-				<form onSubmit={this.handleSubmit} className="sign-in-form">
-					<div className="sign-in-input">
-						<label htmlFor="username">Username</label>
-						<br/>
-						<input onChange={this.updateName} type="text" value={this.state.username}/>
-					</div>
+			<div className="modal-sign-up">
+				<section className="modal-form">
+					<h1>
+						<div>Please Sign Up</div>
+					</h1>
+					<p>
+						Register for free to access all EasyStreets has to offer including premium data and advanced features.
+					</p>
 
-					<div className="sign-in-input">
-						<label htmlFor="password">Password</label>
-						<br/>
-						<input onChange={this.updatePassword} type="password" value={this.state.password}/>
-					</div>
+					<form onSubmit={this.handleSubmit} className="sign-in-form">
+						<div className="sign-in-input">
+							<label htmlFor="username">Username</label>
+							<br/>
+							<input onChange={this.updateName} type="text" value={this.state.username}/>
+						</div>
 
-					<div className="sign-in-submit">
-						<button>Submit</button>
-					</div>
+						<div className="sign-in-input">
+							<label htmlFor="password">Password</label>
+							<br/>
+							<input onChange={this.updatePassword} type="password" value={this.state.password}/>
+						</div>
 
-			    <div className="model-signup-screen" onClick={this._modelToggle}></div>
+						<div className="sign-in-submit">
+							<button>Submit</button>
+						</div>
+					</form>
+				</section>
 
-				</form>
-
-			</section>
+				<div className="modal-screen js-modal-close" onClick={this._modalToggle}>
+				</div>
+			</div>
 		);
 	}
 

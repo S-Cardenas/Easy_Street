@@ -54,7 +54,7 @@ var SignInComp = React.createClass({
 										<a href="#" onClick={this._modalToggleSignIn}>Sign In</a>
 									</li>
 									<li>
-										<a href="#" onClick={this._modelToggleRegister}>Register (It's Free)</a>
+										<a href="#" onClick={this._modalToggleRegister}>Register (It's Free)</a>
 									</li>
 								</ul>
 								<LoginForm />
@@ -67,9 +67,9 @@ var SignInComp = React.createClass({
 			$(".modal").addClass("is-open");
 		},
 
-		_modelToggleRegister: function(e) {
+		_modalToggleRegister: function(e) {
 			e.preventDefault();
-			$("#model-signup").addClass("model-signup-is-active");
+			$(".modal-sign-up").addClass("is-open");
 		},
 
 
