@@ -415,6 +415,11 @@ img {
 	border: 4px solid white;
 }
 
+.images-item img {
+  width: 100%;
+  height: 100%;
+}
+
 .images-item img:hover {
 	border: 4px solid #0080c6;
 }
