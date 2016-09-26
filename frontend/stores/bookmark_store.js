@@ -9,6 +9,10 @@ var resetBookmarks = function(bookmarks) {
   _bookmarks = bookmarks;
 };
 
+BookmarkStore.resetBookmarks = function() {
+  _bookmarks = [];
+};
+
 BookmarkStore.all = function() {
   return _bookmarks.slice(0);
 };

@@ -1,5 +1,6 @@
 var React = require('react');
 var SessionStore = require('../stores/session_store.js');
+var BookmarkStore = require('../stores/bookmark_store.js');
 var LoginForm = require('./login_form.jsx');
 var SignupForm = require('./signup_form.jsx');
 var Link = require('react-router').Link;
@@ -21,6 +22,7 @@ var SignInComp = React.createClass({
 
 		_signOut: function() {
 			ApiUtil.logOut();
+			BookmarkStore.resetBookmarks();
 		},
 
 		_loggedIn: function() {
