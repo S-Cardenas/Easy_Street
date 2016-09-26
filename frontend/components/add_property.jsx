@@ -37,11 +37,10 @@ var AddProperty = React.createClass({
 		}
 	},
 
-	handleSubmit: function() {
+	handleSubmit: function(e) {
+		e.preventDefault();
 		var geocoder = new google.maps.Geocoder();
 		geocoder.geocode({'address': this.state.address}, function(results, status){
-			console.log(results);
-			console.log(status);
 
 			if (status == google.maps.GeocoderStatus.OK) {
 				var latResult = results[0].geometry.location.lat();
@@ -66,8 +65,9 @@ var AddProperty = React.createClass({
 				}
 
 				ApiUtil.createProperty(formData, function(property) {
-					this.context.router.push(null, "properties/" + property.id);
+					this.context.router.push('/properties/' + property.id);
 				}.bind(this));
+
 			}
 			else {
 				console.log('didnt find the address');
