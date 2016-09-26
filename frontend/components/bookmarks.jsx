@@ -25,8 +25,12 @@ var Bookmarks = React.createClass({
 	render: function() {
 		return(
 			<div className="properties-page group">
-				<PropertiesIndex apiCall={'bookmarks'} />
-				<Map focusedProperty={this.state.focusedProperty} />
+				<div className="content-left">
+					<PropertiesIndex apiCall={'bookmarks'} />
+				</div>
+				<div className="content-right">
+					<Map focusedProperty={this.state.focusedProperty} />
+				</div>
 				{this.props.children}
 			</div>
 		);
