@@ -20,7 +20,6 @@ var PropertyIndex = React.createClass({
 				ApiUtil.fetchBookmarks();
 			}
 		});
-
   },
 
   componentWillUnmount: function() {

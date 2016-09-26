@@ -73,6 +73,8 @@ img {
 .header {
   background-color: #0080c6;
   height: 50px;
+  width: 1020px;
+  margin: 0 auto;
 }
 
 .header-border {
@@ -93,7 +95,7 @@ img {
   height: 30px;
   width: 30px;
   bottom: 23px;
-  left: 0px;
+  left: 10px;
 }
 
 .header-logo {
@@ -102,7 +104,7 @@ img {
   display: block;
   position: absolute;
   bottom: 25px;
-  left: 40px;
+  left: 50px;
   letter-spacing: 5px;
   font-weight: bold;
 }
