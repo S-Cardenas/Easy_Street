@@ -400,7 +400,6 @@ img {
 	margin: 0 auto;
 }
 
-
 .images-list {
 	width: 450px;
 	height: 100px;
@@ -613,29 +612,54 @@ img {
 }
 
 .add-property-input label {
-	font-size: 16px;
+	font-size: 18px;
+}
+
+.add-property-button {
+  background-color: #0080c6;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 64px;
+  margin-top: 18px;
+  margin-bottom: 30px;
 }
 
 .numeric-input {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 	border: 1px solid grey;
-	width: 150px;
+  padding: 10px;
+	width: 300px;
 }
 
 .address-input {
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 	border: 1px solid grey;
 	width: 300px;
+  padding: 10px;
+}
+
+.add-property-input select {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: 1px solid grey;
+  padding: 10px;
+  width: 320px;
 }
 
 .add-property-input textarea {
 	border: 1px solid grey;
-	width: 300px;
-	height: 100px;
-	margin-top: 5px;
+	width: 500px;
+	height: 200px;
+	margin-top: 10px;
 	margin-bottom: 5px;
+}
+
+.file-input {
+  font-size: 14px;
+  padding: 10px 0 10px 0;
 }
 
 .search-property-div {
@@ -646,29 +670,22 @@ img {
 }
 
 .search-property-form {
-  /*background: green;*/
   width: 700px;
   margin-top: 0;
   margin-left: 0;
 }
 
 .search-property-choice {
-  /*background: red;*/
   margin-right: 15px;
   float: left;
 }
 
-
-
 .search-property-div h1 {
   font-size: 24px;
-  /*font-weight: bold;*/
   color: black;
-  /*margin: 0 auto;*/
   margin-top: 15px;
   margin-bottom: 20px;
   width: 500px;
-  /*text-shadow: 0 0 15px #000, 0 -1px 1px #000;*/
   text-transform: uppercase;
 }
 

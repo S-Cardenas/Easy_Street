@@ -40,6 +40,8 @@ var AddProperty = React.createClass({
 	handleSubmit: function() {
 		var geocoder = new google.maps.Geocoder();
 		geocoder.geocode({'address': this.state.address}, function(results, status){
+			console.log(results);
+			console.log(status);
 
 			if (status == google.maps.GeocoderStatus.OK) {
 				var latResult = results[0].geometry.location.lat();
@@ -117,7 +119,7 @@ var AddProperty = React.createClass({
 					Fill in each detail below and then hit submit.
 				</p>
 
-				<form onSubmit={this.handleSubmit} className="add-property-form">
+				<form onSubmit={this.handleSubmit} className="add-property-form group">
 					<div className="add-property-input">
 						<label htmlFor="address">Address</label>
 						<br/>
@@ -155,36 +157,44 @@ var AddProperty = React.createClass({
 					</div>
 
 					<div className="add-property-input">
-						<label htmlFor="borough">Borough</label><br/>
-						<input type="radio" onChange={this.updateBorough} name="borough" value="1"/>Manhattan<br/>
-						<input type="radio" onChange={this.updateBorough} name="borough" value="2"/>Brooklyn<br/>
-						<input type="radio" onChange={this.updateBorough} name="borough" value="3"/>Queens<br/>
-						<input type="radio" onChange={this.updateBorough} name="borough" value="4"/>Bronx<br/>
-						<input type="radio" onChange={this.updateBorough} name="borough" value="5"/>Staten Island<br/>
+						<label htmlFor="borough">Borough</label>
+						<br/>
+						<select className="dropdown-select-neighborhood" onChange={this.updateBorough}>
+							<option selected disabled>Neighborhood</option>
+							<option name="borough" value="1">Manhattan</option>
+							<option name="borough" value="2">Brooklyn</option>
+							<option name="borough" value="3">Queens</option>
+							<option name="borough" value="4">Bronx</option>
+							<option name="borough" value="5">Staten Island</option>
+						</select>
 					</div>
 
 					<br/>
 
 					<div className="add-property-input">
-						<label htmlFor="availability">Available</label><br/>
-							<input type="radio" onChange={this.updateAvailability} name="availability" value="true"/>True<br/>
-							<input type="radio" onChange={this.updateAvailability} name="availability" value="false"/>False<br/>
+						<label htmlFor="availability">Available</label>
+						<br/>
+						<select className="dropdown-select-neighborhood" onChange={this.updateAvailability}>
+							<option selected disabled>Currently Available?</option>
+							<option name="availability" value="true">True</option>
+							<option name="availability" value="false">False</option>
+						</select>
 					</div>
 
 					<br/>
 
 					<div className="add-property-input">
-						<label htmlFor="images">Upload Images</label><br/>
-							<input type="file" onChange={this.handleFileChange} name="img" multiple/>
+						<label htmlFor="images">Upload Images</label>
+						<br/>
+						<input className="file-input" type="file" onChange={this.handleFileChange} name="img" multiple/>
 					</div>
 
-					<button type='submit'>Submit</button>
+					<button type='submit' className="add-property-button">Submit</button>
 
 				</form>
 			</section>
 		);
 	}
-
 });
 
 module.exports = AddProperty;
