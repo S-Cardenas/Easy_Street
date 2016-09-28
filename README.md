@@ -15,7 +15,7 @@ Take a look at <a href='easystreets.herokuapp.com'>EasyStreets Live</a>
 ##**Features**
 * Enables dynamic location-based property search using Google Maps API
 * Submit New Properties to the site
-* Uploads multiple real estate pictures to Amazon S3
+* Uploads multiple real estate pictures simultaneously to Amazon S3
 * Provides fast multi-search based on user specified parameters
 * Indexes Data for fast database multi-search
 * Allows users to bookmark the properties they are interested in
