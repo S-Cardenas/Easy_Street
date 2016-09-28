@@ -32,7 +32,6 @@ var SearchForm = React.createClass({
       query: query,
       state: {}
     });
-
   },
 
   updateNeighborhood: function(e) {

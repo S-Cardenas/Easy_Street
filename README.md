@@ -69,3 +69,134 @@ handleSubmit: function(e) {
   }.bind(this));
 },
 ```
+
+**Fast MultiSearch**<br/>
+Initially I did not index each column in the property model because I was not
+expecting the size of my data set to be particularly large. However, to accommodate
+an increase in the size of the property database I will be adding an index to the
+following columns in property model : [area, price, number_rooms, number_bathrooms,
+borough_id]. This will turn a full table scan (O(n)) into a binary search (O(log n))
+and greatly increase the query efficiency.
+```
+handleSubmit: function(e) {
+  e.preventDefault();
+  var query = {
+    neighborhood: this.state.neighborhood,
+    areaLow: this.state.areaLow,
+    areaHigh: this.state.areaHigh,
+    priceLow: this.state.priceLow,
+    priceHigh: this.state.priceHigh,
+    num_rooms: this.state.num_rooms,
+    num_bathroom: this.state.num_bathroom
+  };
+
+  this.context.router.push({
+    pathname: '/search',
+    query: query,
+    state: {}
+  });
+},
+
+class Api::SearchController < ApplicationController
+
+  def index
+    @properties = Property
+      .where(borough)
+      .where(priceLow)
+      .where(priceHigh)
+      .where(areaLow)
+      .where(areaHigh)
+      .where(numRooms)
+      .where(numBathroom)
+
+    render :index
+  end
+end
+```
+
+**Bookmark Component**<br/>
+A user can bookmark a specific property and instantly see the bookmark marker
+on the page. To accomplish this I created a separate store and component for the
+bookmarks. Whenever a property is bookmarked, the bookmark is created in the backend,
+the store is updated and a re-render is instantly triggered.
+
+```
+var React = require('react');
+var PropertyStore = require('../stores/property.js');
+var BookmarkStore = require('../stores/bookmark_store.js');
+var SessionStore = require('../stores/session_store.js');
+var ApiUtil = require('../util/api_util.js');
+var ApiActions = require('../actions/api_actions.js');
+var Link = require('react-router').Link;
+
+var PropertyIndex = React.createClass({
+
+  _bookmarkArray: function() {
+    var arr = BookmarkStore.all().map(function(bookmark) {
+      return (bookmark.property_id);
+    });
+
+    return arr;
+  },
+
+  _onChangeBookmark: function() {
+    this._bookmarkArray();
+    this.setState({ bookmarks: BookmarkStore.all()});
+  },
+
+  _addBookmark: function(property) {
+    ApiUtil.addBookmark(property);
+  },
+
+  render: function() {
+    var myProperties = this.state.properties.map(function(property, i) {
+      var button = null;
+      if (this._bookmarkArray().includes(property.id)) {
+        button = <button className="bookmark-button-saved">Saved</button>;
+      }
+      else {
+        button = <button className="bookmark-button" onClick={this._addBookmark.bind(null, property)}>BookMark</button>;
+      }
+
+      return(
+        <div className="property-item group"  key={i} onMouseEnter={this._focusProperty.bind(null, property)} >
+          <Link to={"/properties/" + property.id }>
+            <img src={property.pic_url} />
+            <ul className="property-listing">
+              <li className="property-address">
+                {property.address}
+              </li>
+              <li className="property-price">
+                ${property.price} For Rent
+              </li>
+              <li>
+                {property.num_rooms} rooms
+              </li>
+              <li>
+                {property.num_bathroom} baths
+              </li>
+              <li>
+                {property.area} ft²
+              </li>
+              <li>
+                Property in {property.borough_id}
+              </li>
+              <li>
+                Listed by {property.author_id}
+              </li>
+            </ul>
+          </Link>
+          {button}
+        </div>
+      );
+    }.bind(this));
+
+    return (
+      <ul className="property-index">
+        { myProperties }
+      </ul>
+
+    );
+  }
+});
+```
