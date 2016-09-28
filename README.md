@@ -202,7 +202,7 @@ var PropertyIndex = React.createClass({
 ```
 
 ###**To-Do**
-- [] Make Facebook Oauth login.
+- [ ] Make Facebook Oauth login.
 - [ ] Make Google Oauth login.
 - [ ] Create a component which shows data statistic for property queries.
 - [ ] Implement most bookmarked/searched properties.
