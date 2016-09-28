@@ -37,6 +37,7 @@ var AddProperty = React.createClass({
 		}
 	},
 
+	// Find the real world property and attach image files. Submit to backend.
 	handleSubmit: function(e) {
 		e.preventDefault();
 		var geocoder = new google.maps.Geocoder();
