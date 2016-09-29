@@ -104,7 +104,7 @@ var TopNavBar = React.createClass({
 								</ul>
 							</li>
 
-							<li href="#">Blog</li>
+							<li><a href="http://ny.curbed.com/">Blog</a></li>
 						</ul>
 
 					</h3>
@@ -119,19 +119,20 @@ var TopNavBar = React.createClass({
 							<li>
 								<Link to={"/properties"}>ALL PROPERTIES</Link>
 							</li>
-							<li>RENTALS</li>
 							<li>RESOURCES
 								<ul className="resources-list">
-									<li>Browse</li>
-									<li>Market Data</li>
-									<li>Mortgage</li>
-									<li>Tools</li>
+									<li><a href="http://www.numbeo.com/property-investment/comparison.jsp">Prices</a></li>
+									<li><a href="https://www.bloombergbriefs.com/real-estate/">Market Data</a></li>
+									<li><a href="http://www.bankrate.com/new-york/mortgage-rates.aspx">Mortgage</a></li>
+									<li><a href="http://www.calculator.net/mortgage-calculator.html">Tools</a></li>
 								</ul>
 							</li>
 						</ul>
 					</h3>
 
-					<span>Search Bar</span>
+					<div>
+							<Link to={"/"}>SEARCH</Link>
+					</div>
 
 				</nav>
 

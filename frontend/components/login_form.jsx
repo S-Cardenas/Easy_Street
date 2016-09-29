@@ -15,7 +15,15 @@ var LoginForm = React.createClass({
 				ApiUtil.fetchBookmarks();
 			}
 		});
-		// Use router.replace('/properties') for the time being
+	},
+
+	guestLogIn: function(e) {
+		e.preventDefault();
+		ApiUtil.login({username: "Stefan", password: "password"}, function() {
+			if (SessionStore.currentUser()) {
+				ApiUtil.fetchBookmarks();
+			}
+		});
 	},
 
 	updateName: function(e) {
@@ -59,6 +67,11 @@ var LoginForm = React.createClass({
 						<div className="sign-in-submit">
 							<button>Submit</button>
 						</div>
+
+						<div onClick={this.guestLogIn} className="sign-in-submit">
+							<button>Log In As Guest</button>
+						</div>
+						
 					</form>
 				</section>
 

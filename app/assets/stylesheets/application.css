@@ -269,8 +269,14 @@ img {
 	text-decoration: underline;
 }
 
-.header-nav-bottom span {
+.header-nav-bottom div {
 	float: right;
+  font-weight: 700;
+  font-size: 16px;
+  /*background: green;*/
+  margin-top: 8px;
+  margin-right: 8px;
+  /*font-size: 24px;*/
 }
 
 .properties-page {
@@ -573,14 +579,14 @@ img {
 	width: 250px;
 	height: 60px;
 	margin: 25px auto;
-	margin-right: 33px;
+  text-align: center;
 }
 
 .sign-in-submit button {
-	margin: auto;
+  background: #0080c6;
+  width: 100%;
+  height: 100%;
 	font-size: 20px;
-	margin-left: 80px;
-	margin-top: 20px;
 }
 
 .modal-sign-up {
