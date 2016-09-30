@@ -17,7 +17,7 @@ Take a look at <a href='easystreets.herokuapp.com'>EasyStreets Live</a>
 * Submit New Properties to the site
 * Uploads multiple real estate pictures simultaneously to Amazon S3
 * Provides fast multi-search based on user specified parameters
-* Indexes Data for fast database multi-search
+* Indexes Data for fast database user defined queries
 * Allows users to bookmark the properties they are interested in
 * Background automatically changes to simulate traveling through NYC
 
@@ -70,32 +70,31 @@ handleSubmit: function(e) {
 },
 ```
 
-**Fast MultiSearch**<br/>
+**Fast Property Listing Queries**<br/>
 Initially I did not index each column in the property model because I was not
-expecting the size of my data set to be particularly large. However, to accommodate
-an increase in the size of the property database I will be adding an index to the
-following columns in property model : [area, price, number_rooms, number_bathrooms,
+expecting the size of my data set to be particularly large. To accommodate
+an increase in the size of the property database I added a composite bitmap index
+to the property model : [area, price, number_rooms, number_bathrooms,
 borough_id]. This will turn a full table scan (O(n)) into a binary search (O(log n))
 and greatly increase the query efficiency.
 ```
-handleSubmit: function(e) {
-  e.preventDefault();
-  var query = {
-    neighborhood: this.state.neighborhood,
-    areaLow: this.state.areaLow,
-    areaHigh: this.state.areaHigh,
-    priceLow: this.state.priceLow,
-    priceHigh: this.state.priceHigh,
-    num_rooms: this.state.num_rooms,
-    num_bathroom: this.state.num_bathroom
-  };
+create_table "properties", force: :cascade do |t|
+  t.string   "address",                     null: false
+  t.integer  "author_id",                   null: false
+  t.string   "description",                 null: false
+  t.integer  "area",                        null: false
+  t.integer  "price",                       null: false
+  t.integer  "num_rooms",                   null: false
+  t.integer  "num_bathroom",                null: false
+  t.integer  "borough_id",                  null: false
+  t.boolean  "availability", default: true, null: false
+  t.datetime "created_at"
+  t.datetime "updated_at"
+  t.float    "lat",                         null: false
+  t.float    "lng",                         null: false
+end
 
-  this.context.router.push({
-    pathname: '/search',
-    query: query,
-    state: {}
-  });
-},
+add_index "properties", ["borough_id", "price", "area", "num_rooms", "num_bathroom"], name: "search_index", using: :btree
 
 class Api::SearchController < ApplicationController
 
