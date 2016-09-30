@@ -12,8 +12,13 @@
 !/log/.keep
 /tmp
 
+# Ignore node modules
 node_modules
+
+# Ignore bundle
 bundle.js
+
+# Ignore Byebug and DSStore
 .byebug_history
 .DS_Store
 
